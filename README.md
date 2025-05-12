@@ -3,5 +3,5 @@
 ### Uses:
 - Tailwind
   - Flowbite
-- Next.js
 - React
+  - Next.js
