@@ -6,10 +6,13 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-wrap flex-row justify-center mt-10">
-        <Card />
-        <Card />
-      </div>
+      <main>
+        <h1 class="text-center mt-10 text-2xl">Gör ditt val!</h1>
+        <div className="flex flex-wrap flex-row justify-center mt-10">
+          <Card />
+          <Card />
+        </div>
+      </main>
     </div>
   );
 }

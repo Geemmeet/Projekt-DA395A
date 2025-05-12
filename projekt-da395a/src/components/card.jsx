@@ -9,7 +9,7 @@ export default function card() {
           alt="not available"
         />
       </div>
-      <h3 className="mt-4">Recept titel</h3>
+      <h3 className="mt-4 text-lg font-bold">Recept titel</h3>
       <p className="pb-10 mt-2">Text som sedan ska bytas ut</p>
     </div>
   );
