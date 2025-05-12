@@ -5,5 +5,8 @@ export async function GET(req) {
 
     const response = await fetch(
         `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${searchParams}&number=3`
-    )
+    );
+
+    const data = await response.json();
+    return Response.json(data);
 }
