@@ -2,6 +2,6 @@
 
 ### Uses:
 - Tailwind
-  - Flowbite
+  - Flowbite React
 - React
   - Next.js
