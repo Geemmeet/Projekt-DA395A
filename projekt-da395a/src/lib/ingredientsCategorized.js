@@ -1,4 +1,4 @@
-export const ingredientPool = [
+export const ingredients = [
   {
     "id": 11482,
     "name": "acorn squash",

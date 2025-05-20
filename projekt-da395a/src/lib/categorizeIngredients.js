@@ -1,4 +1,7 @@
 export function categorizeIngredients(name) {
+    /*
+    Funktionen kategoriserar ingredienser baserat på nyckelord, returnerar sedan kategorin som en sträng.
+    */
     const lower = name.toLowerCase();
     if (/(chicken|beef|pork|tuna|tofu|egg)/.test(lower)) return "protein";
     if (/(pasta|bread|potato|rice|flour)/.test(lower)) return "carb";
