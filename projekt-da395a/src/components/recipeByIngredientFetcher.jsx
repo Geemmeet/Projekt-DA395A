@@ -7,15 +7,12 @@ export default function RecipeByIngredientFetcher() {
     const [recipes, setRecipes] = useState([]);
     const handleSearch = async function() {
         try {
-            console.log(apiKey);
-            const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?&ingredients=${inputValue}&number=3&apiKey=${apiKey}`);
+            const response = await fetch(`/api/recipe?type=byIngredients&ingredients=${inputValue}`)
             const data = await response.json();
-            setRecipes(data);
             console.log(data);
         } catch (error) {
             console.log(error.response)
         }
-        
     };
     
     return (
