@@ -1,4 +1,4 @@
-    export const ingredientPool = [
+    export const ingredients = [
     { id: 11482, name: "acorn squash", category: null },
     { id: 6979, name: "adobo sauce", category: null },
     { id: 19912, name: "agave nectar", category: null },
