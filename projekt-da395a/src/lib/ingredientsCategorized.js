@@ -1,4 +1,4 @@
-export const ingredients = [
+export const ingredientPool = [
   {
     "id": 11482,
     "name": "acorn squash",
@@ -32,7 +32,7 @@ export const ingredients = [
   {
     "id": 93740,
     "name": "almond flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 93607,
@@ -62,12 +62,12 @@ export const ingredients = [
   {
     "id": 7064,
     "name": "andouille sausage",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 18087,
     "name": "angel food cake mix",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10020420,
@@ -107,12 +107,12 @@ export const ingredients = [
   {
     "id": 19719,
     "name": "apricot preserves",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 9021,
     "name": "apricots",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 10020052,
@@ -127,12 +127,12 @@ export const ingredients = [
   {
     "id": 93828,
     "name": "artichoke heart quarters",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 11007,
     "name": "artichokes",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 11959,
@@ -157,22 +157,22 @@ export const ingredients = [
   {
     "id": 9252,
     "name": "asian pear",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 11011,
     "name": "asparagus spears",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 9037,
     "name": "avocado",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 4581,
     "name": "avocado oil",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 10311821,
@@ -187,12 +187,12 @@ export const ingredients = [
   {
     "id": 11960,
     "name": "baby carrots",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 10011168,
     "name": "baby corn",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 11457,
@@ -202,22 +202,22 @@ export const ingredients = [
   {
     "id": 10010204,
     "name": "baby-back ribs",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 10192,
     "name": "baby-back ribs",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 10123,
     "name": "bacon",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 4609,
     "name": "bacon fat",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 18033,
@@ -237,7 +237,7 @@ export const ingredients = [
   {
     "id": 18372,
     "name": "baking soda",
-    "category": "beverage"
+    "category": null
   },
   {
     "id": 98998,
@@ -312,17 +312,17 @@ export const ingredients = [
   {
     "id": 14003,
     "name": "beer",
-    "category": null
+    "category": "beverage"
   },
   {
     "id": 14006,
     "name": "beer",
-    "category": null
+    "category": "beverage"
   },
   {
     "id": 11080,
     "name": "beets",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 10211821,
@@ -332,7 +332,7 @@ export const ingredients = [
   {
     "id": 1009054,
     "name": "berries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 18010,
@@ -347,7 +347,7 @@ export const ingredients = [
   {
     "id": 19903,
     "name": "bittersweet chocolate",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 99210,
@@ -377,7 +377,7 @@ export const ingredients = [
   {
     "id": 9042,
     "name": "blackberries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 12062,
@@ -397,7 +397,7 @@ export const ingredients = [
   {
     "id": 9050,
     "name": "blueberries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 11116,
@@ -477,7 +477,7 @@ export const ingredients = [
   {
     "id": 20012,
     "name": "bulgur",
-    "category": null
+    "category": "carb"
   },
   {
     "id": 1001,
@@ -507,37 +507,37 @@ export const ingredients = [
   {
     "id": 11109,
     "name": "cabbage",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 43015,
     "name": "caesar dressing",
-    "category": null
+    "category": "condiment"
   },
   {
     "id": 1032028,
     "name": "cajun seasoning",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 10020129,
     "name": "cake flour",
-    "category": "carb"
+    "category": "dessert"
   },
   {
     "id": 93759,
     "name": "candy canes",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 98857,
     "name": "candy coating",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 93775,
     "name": "candy melts",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 16018,
@@ -567,7 +567,7 @@ export const ingredients = [
   {
     "id": 11264,
     "name": "canned mushrooms",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 16044,
@@ -622,7 +622,7 @@ export const ingredients = [
   {
     "id": 19074,
     "name": "caramels",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 2005,
@@ -647,7 +647,7 @@ export const ingredients = [
   {
     "id": 11124,
     "name": "carrots",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 15010,
@@ -677,7 +677,7 @@ export const ingredients = [
   {
     "id": 10111143,
     "name": "celery ribs",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 11141,
@@ -702,7 +702,7 @@ export const ingredients = [
   {
     "id": 10043155,
     "name": "champagne",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 99236,
@@ -882,17 +882,17 @@ export const ingredients = [
   {
     "id": 19081,
     "name": "chocolate",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 28027,
     "name": "chocolate chip cookies",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10419903,
     "name": "chocolate chunks",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 19270,
@@ -907,7 +907,7 @@ export const ingredients = [
   {
     "id": 18166,
     "name": "chocolate sandwich cookies",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 14181,
@@ -917,12 +917,12 @@ export const ingredients = [
   {
     "id": 10118157,
     "name": "chocolate wafer cookies",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 7019,
     "name": "chorizo sausage",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 2048,
@@ -1022,7 +1022,7 @@ export const ingredients = [
   {
     "id": 93747,
     "name": "coconut flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 12118,
@@ -1057,7 +1057,7 @@ export const ingredients = [
   {
     "id": 14400,
     "name": "cola",
-    "category": null
+    "category": "beverage"
   },
   {
     "id": 1011,
@@ -1087,7 +1087,7 @@ export const ingredients = [
   {
     "id": 10862,
     "name": "cooked bacon",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 20041,
@@ -1102,7 +1102,7 @@ export const ingredients = [
   {
     "id": 10802,
     "name": "cooked ham",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 10220445,
@@ -1122,7 +1122,7 @@ export const ingredients = [
   {
     "id": 20137,
     "name": "cooked quinoa",
-    "category": null
+    "category": "carb"
   },
   {
     "id": 20088,
@@ -1132,7 +1132,7 @@ export const ingredients = [
   {
     "id": 10118192,
     "name": "cookies",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 2012,
@@ -1142,7 +1142,7 @@ export const ingredients = [
   {
     "id": 11168,
     "name": "corn",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 18022,
@@ -1152,32 +1152,32 @@ export const ingredients = [
   {
     "id": 19003,
     "name": "corn chips",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 8020,
     "name": "corn flakes cereal",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 20019,
     "name": "corn flour",
-    "category": "carb"
+    "category": "vegetable"
   },
   {
     "id": 11172,
     "name": "corn kernels",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 42289,
     "name": "corn oil",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 18363,
     "name": "corn tortillas",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 18023,
@@ -1192,17 +1192,17 @@ export const ingredients = [
   {
     "id": 5307,
     "name": "cornish hens",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 35137,
     "name": "cornmeal",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 20027,
     "name": "cornstarch",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 1001019,
@@ -1227,7 +1227,7 @@ export const ingredients = [
   {
     "id": 20028,
     "name": "couscous",
-    "category": null
+    "category": "carb"
   },
   {
     "id": 16063,
@@ -1237,7 +1237,7 @@ export const ingredients = [
   {
     "id": 10015136,
     "name": "crabmeat",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 2030,
@@ -1247,7 +1247,7 @@ export const ingredients = [
   {
     "id": 9078,
     "name": "cranberries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 43382,
@@ -1297,12 +1297,12 @@ export const ingredients = [
   {
     "id": 11266,
     "name": "cremini mushrooms",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 1002031,
     "name": "creole seasoning",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 8066,
@@ -1332,7 +1332,7 @@ export const ingredients = [
   {
     "id": 18139,
     "name": "cup cake",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 9085,
@@ -1342,7 +1342,7 @@ export const ingredients = [
   {
     "id": 93604,
     "name": "curry leaves",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 10016223,
@@ -1357,17 +1357,17 @@ export const ingredients = [
   {
     "id": 19904,
     "name": "dark chocolate",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10019904,
     "name": "dark chocolate candy bars",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10019071,
     "name": "dark chocolate chips",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 1004058,
@@ -1387,7 +1387,7 @@ export const ingredients = [
   {
     "id": 10010151,
     "name": "deli ham",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 7259,
@@ -1397,22 +1397,22 @@ export const ingredients = [
   {
     "id": 8121,
     "name": "dessert oats",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10014057,
     "name": "dessert wine",
-    "category": "beverage"
+    "category": "dessert"
   },
   {
     "id": 99186,
     "name": "diced ham",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 14146,
     "name": "diet pop",
-    "category": null
+    "category": "beverage"
   },
   {
     "id": 1002046,
@@ -1442,7 +1442,7 @@ export const ingredients = [
   {
     "id": 9032,
     "name": "dried apricots",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 2003,
@@ -1452,7 +1452,7 @@ export const ingredients = [
   {
     "id": 93822,
     "name": "dried cherries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 99233,
@@ -1462,7 +1462,7 @@ export const ingredients = [
   {
     "id": 9079,
     "name": "dried cranberries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 2017,
@@ -1472,12 +1472,12 @@ export const ingredients = [
   {
     "id": 11284,
     "name": "dried onion",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 10011268,
     "name": "dried porcini mushrooms",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 1002038,
@@ -1702,12 +1702,12 @@ export const ingredients = [
   {
     "id": 20081,
     "name": "flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 10218364,
     "name": "flour tortillas",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 1020,
@@ -1752,12 +1752,12 @@ export const ingredients = [
   {
     "id": 11167,
     "name": "fresh corn",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 10011167,
     "name": "fresh corn kernels",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 9089,
@@ -1797,7 +1797,7 @@ export const ingredients = [
   {
     "id": 93709,
     "name": "fried onions",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 19230,
@@ -1812,7 +1812,7 @@ export const ingredients = [
   {
     "id": 11913,
     "name": "frozen corn",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 11463,
@@ -1842,7 +1842,7 @@ export const ingredients = [
   {
     "id": 16157,
     "name": "garbanzo bean flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 11215,
@@ -1877,7 +1877,7 @@ export const ingredients = [
   {
     "id": 99040,
     "name": "gf chocolate cake mix",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10514037,
@@ -1907,7 +1907,7 @@ export const ingredients = [
   {
     "id": 18172,
     "name": "gingersnap cookies",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 98853,
@@ -1937,17 +1937,17 @@ export const ingredients = [
   {
     "id": 10018617,
     "name": "graham cracker crumbs",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 18942,
     "name": "graham cracker pie crust",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 18617,
     "name": "graham crackers",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 10020088,
@@ -2037,7 +2037,7 @@ export const ingredients = [
   {
     "id": 11291,
     "name": "green onions",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 21052,
@@ -2052,7 +2052,7 @@ export const ingredients = [
   {
     "id": 1022034,
     "name": "grill seasoning",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 2001,
@@ -2167,12 +2167,12 @@ export const ingredients = [
   {
     "id": 10151,
     "name": "ham",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 18350,
     "name": "hamburger buns",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 1129,
@@ -2257,7 +2257,7 @@ export const ingredients = [
   {
     "id": 19184,
     "name": "instant chocolate pudding mix",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 14214,
@@ -2297,12 +2297,12 @@ export const ingredients = [
   {
     "id": 7036,
     "name": "italian sausages",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 1022027,
     "name": "italian seasoning",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 99002,
@@ -2402,7 +2402,7 @@ export const ingredients = [
   {
     "id": 18133,
     "name": "lb cake",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 23557,
@@ -2492,7 +2492,7 @@ export const ingredients = [
   {
     "id": 19350,
     "name": "light corn syrup",
-    "category": "sweetener"
+    "category": "vegetable"
   },
   {
     "id": 43274,
@@ -2637,7 +2637,7 @@ export const ingredients = [
   {
     "id": 2015,
     "name": "madras curry powder",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 14311,
@@ -2667,7 +2667,7 @@ export const ingredients = [
   {
     "id": 9328,
     "name": "maraschino cherries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 4073,
@@ -2727,17 +2727,17 @@ export const ingredients = [
   {
     "id": 1015006,
     "name": "meat",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 1065062,
     "name": "meat",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 10110219,
     "name": "meatballs",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 9421,
@@ -2802,7 +2802,7 @@ export const ingredients = [
   {
     "id": 11260,
     "name": "mushroom",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 15164,
@@ -2822,7 +2822,7 @@ export const ingredients = [
   {
     "id": 11119,
     "name": "napa cabbage",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 9202,
@@ -2882,7 +2882,7 @@ export const ingredients = [
   {
     "id": 20132,
     "name": "oat flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 8120,
@@ -2907,7 +2907,7 @@ export const ingredients = [
   {
     "id": 1052034,
     "name": "old bay seasoning",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 4053,
@@ -2922,17 +2922,17 @@ export const ingredients = [
   {
     "id": 11282,
     "name": "onion",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 2026,
     "name": "onion powder",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 6094,
     "name": "onion soup mix",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 9200,
@@ -2982,7 +2982,7 @@ export const ingredients = [
   {
     "id": 10018166,
     "name": "oreo cookies",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10920420,
@@ -3072,7 +3072,7 @@ export const ingredients = [
   {
     "id": 10020080,
     "name": "pastry flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 9236,
@@ -3107,17 +3107,17 @@ export const ingredients = [
   {
     "id": 98988,
     "name": "pear liqueur",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 20005,
     "name": "pearl barley",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 10111282,
     "name": "pearl onions",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 11304,
@@ -3157,7 +3157,7 @@ export const ingredients = [
   {
     "id": 1022030,
     "name": "peppercorns",
-    "category": "spice"
+    "category": "vegetable"
   },
   {
     "id": 98858,
@@ -3312,7 +3312,7 @@ export const ingredients = [
   {
     "id": 7059,
     "name": "polish sausage",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 9442,
@@ -3332,7 +3332,7 @@ export const ingredients = [
   {
     "id": 19034,
     "name": "popcorn",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 2033,
@@ -3402,7 +3402,7 @@ export const ingredients = [
   {
     "id": 11265,
     "name": "portabella mushrooms",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 23612,
@@ -3427,7 +3427,7 @@ export const ingredients = [
   {
     "id": 2034,
     "name": "poultry seasoning",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 19336,
@@ -3502,7 +3502,7 @@ export const ingredients = [
   {
     "id": 20035,
     "name": "quinoa",
-    "category": null
+    "category": "carb"
   },
   {
     "id": 93773,
@@ -3537,17 +3537,17 @@ export const ingredients = [
   {
     "id": 4639,
     "name": "ranch dressing",
-    "category": null
+    "category": "condiment"
   },
   {
     "id": 93733,
     "name": "ranch dressing mix",
-    "category": null
+    "category": "condiment"
   },
   {
     "id": 9302,
     "name": "raspberries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 10719297,
@@ -3572,7 +3572,7 @@ export const ingredients = [
   {
     "id": 99229,
     "name": "real bacon recipe pieces",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 1079003,
@@ -3587,7 +3587,7 @@ export const ingredients = [
   {
     "id": 11112,
     "name": "red cabbage",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 11819,
@@ -3627,7 +3627,7 @@ export const ingredients = [
   {
     "id": 10011282,
     "name": "red onion",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 1032009,
@@ -3647,7 +3647,7 @@ export const ingredients = [
   {
     "id": 18157,
     "name": "red velvet cookie",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 14096,
@@ -3862,7 +3862,7 @@ export const ingredients = [
   {
     "id": 4114,
     "name": "salad dressing",
-    "category": null
+    "category": "condiment"
   },
   {
     "id": 7071,
@@ -3917,12 +3917,12 @@ export const ingredients = [
   {
     "id": 1017063,
     "name": "sausage",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 1037063,
     "name": "sausage links",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 10011819,
@@ -3957,12 +3957,12 @@ export const ingredients = [
   {
     "id": 1042027,
     "name": "seasoning",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 1032027,
     "name": "seasoning blend",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 93818,
@@ -3972,12 +3972,12 @@ export const ingredients = [
   {
     "id": 20129,
     "name": "self-rising flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 10019903,
     "name": "semi sweet chocolate chips",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 11977,
@@ -3992,7 +3992,7 @@ export const ingredients = [
   {
     "id": 10018350,
     "name": "sesame seed hamburger buns",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 12023,
@@ -4037,7 +4037,7 @@ export const ingredients = [
   {
     "id": 11238,
     "name": "shiitake mushroom caps",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 10120052,
@@ -4052,7 +4052,7 @@ export const ingredients = [
   {
     "id": 10013149,
     "name": "short ribs",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 18192,
@@ -4147,7 +4147,7 @@ export const ingredients = [
   {
     "id": 43016,
     "name": "slaw dressing",
-    "category": null
+    "category": "condiment"
   },
   {
     "id": 10011109,
@@ -4172,7 +4172,7 @@ export const ingredients = [
   {
     "id": 7916,
     "name": "smoked sausage",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 16150,
@@ -4192,7 +4192,7 @@ export const ingredients = [
   {
     "id": 14121,
     "name": "soda water",
-    "category": "beverage"
+    "category": null
   },
   {
     "id": 1056,
@@ -4242,7 +4242,7 @@ export const ingredients = [
   {
     "id": 93823,
     "name": "spelt flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 1022046,
@@ -4292,7 +4292,7 @@ export const ingredients = [
   {
     "id": 10023618,
     "name": "stew meat",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 11583,
@@ -4317,7 +4317,7 @@ export const ingredients = [
   {
     "id": 9316,
     "name": "strawberries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 10819297,
@@ -4392,7 +4392,7 @@ export const ingredients = [
   {
     "id": 11294,
     "name": "sweet onion",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 1002028,
@@ -4447,7 +4447,7 @@ export const ingredients = [
   {
     "id": 2073,
     "name": "taco seasoning mix",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 18360,
@@ -4467,7 +4467,7 @@ export const ingredients = [
   {
     "id": 93696,
     "name": "tapioca flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 2041,
@@ -4507,12 +4507,12 @@ export const ingredients = [
   {
     "id": 93605,
     "name": "thai red curry paste",
-    "category": null
+    "category": "spice"
   },
   {
     "id": 10310123,
     "name": "thick-cut bacon",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 15261,
@@ -4642,7 +4642,7 @@ export const ingredients = [
   {
     "id": 10020081,
     "name": "unbleached flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 1145,
@@ -4652,7 +4652,7 @@ export const ingredients = [
   {
     "id": 10130,
     "name": "unsmoked back bacon",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 9019,
@@ -4722,7 +4722,7 @@ export const ingredients = [
   {
     "id": 98848,
     "name": "vegan chocolate chips",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 4673,
@@ -4742,7 +4742,7 @@ export const ingredients = [
   {
     "id": 16542,
     "name": "vegetarian bacon",
-    "category": null
+    "category": "protein"
   },
   {
     "id": 14132,
@@ -4837,7 +4837,7 @@ export const ingredients = [
   {
     "id": 18137,
     "name": "white cake mix",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 1011009,
@@ -4847,17 +4847,17 @@ export const ingredients = [
   {
     "id": 19087,
     "name": "white chocolate",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10019087,
     "name": "white chocolate chips",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10611282,
     "name": "white onion",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 2032,
@@ -4867,7 +4867,7 @@ export const ingredients = [
   {
     "id": 93824,
     "name": "white whole wheat flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 14106,
@@ -4882,7 +4882,7 @@ export const ingredients = [
   {
     "id": 1002001,
     "name": "whole allspice berries",
-    "category": null
+    "category": "fruit"
   },
   {
     "id": 5006,
@@ -4902,7 +4902,7 @@ export const ingredients = [
   {
     "id": 11177,
     "name": "whole kernel corn",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 1012002,
@@ -4917,7 +4917,7 @@ export const ingredients = [
   {
     "id": 20080,
     "name": "whole wheat flour",
-    "category": "carb"
+    "category": null
   },
   {
     "id": 93675,
@@ -4977,12 +4977,12 @@ export const ingredients = [
   {
     "id": 18144,
     "name": "yellow cake mix",
-    "category": null
+    "category": "dessert"
   },
   {
     "id": 10511282,
     "name": "yellow onion",
-    "category": null
+    "category": "vegetable"
   },
   {
     "id": 1116,

@@ -9,7 +9,7 @@ export default function GetIngredient() {
 
     const handleSearch = async function() {
         try {
-                const response = await fetch(`/api/recipe?type=ingrID&id=15117`)
+                const response = await fetch(`/api/recipe?type=ingrID&id=14400`)
                 const data = await response.json();
                 console.log(data);
                 handleCreate(data);
