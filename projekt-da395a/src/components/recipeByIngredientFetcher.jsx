@@ -4,7 +4,6 @@ import {useState} from 'react';
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 export default function RecipeByIngredientFetcher() {
     const [inputValue, setInputValue] = useState('');
-    const [recipes, setRecipes] = useState([]);
     const handleSearch = async function() {
         try {
             const response = await fetch(`/api/recipe?type=byIngredients&ingredients=${inputValue}`)
