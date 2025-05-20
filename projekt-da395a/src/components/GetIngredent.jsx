@@ -9,6 +9,14 @@ export default function GetIngredient() {
     const [ingredient, setIngredient] = useState([]);
 
     const handleSearch = async function() {
+        /*
+        Här sköter vi api-anropet för att hämta ingrediensinformation för 2 ingredienser. 
+        filterByCategory returnerar en lista med ingredienser (från vår lista) baserat på vilken kategori vi skickar med.
+        randomizer tar den filtrerade listan, slumpar den och returnerar 2 ingredienser.
+        vi hämtar id:na genom .map()
+        Vi använder Promise.all och map() på id:na för att skicka flera api:anrop samtidigt
+        till slut uppdaterar vi vår ingredient till det vi får tillbaka.
+        */
         const filtered = filterByCategory("protein");
         const selected = randomizer({ array: filtered, count: 2 });
         const ids = selected.map((item) => item.id);

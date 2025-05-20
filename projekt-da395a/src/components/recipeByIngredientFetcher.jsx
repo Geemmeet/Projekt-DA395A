@@ -1,8 +1,13 @@
 'use client';
 import React from 'react';
 import {useState} from 'react';
-const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 export default function RecipeByIngredientFetcher() {
+
+    /*
+    !!UTDATERAD KOMPONENT!!
+    användes endast för att testa api-anropen.
+    !!UTDATERAD KOMPONENT!!
+    */
     const [inputValue, setInputValue] = useState('');
     const handleSearch = async function() {
         try {
