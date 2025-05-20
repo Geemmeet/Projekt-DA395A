@@ -1,4 +1,4 @@
-import { getRecipesByIngredients, getIngredient } from '@/lib/spoonacular'
+import { getRecipesByIngredients, getIngredient } from '@/lib/spoonacularUtils/spoonacular'
 /*
 Här sköter vi API-anropen till Spoonacular. Vi importerar de specifika anropen från /lib/spoonacular.
 Baserat på vilken ?type vi skicker med från komponenten, körs respektive anrop. 

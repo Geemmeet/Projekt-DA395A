@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
 import {useState} from 'react';
-import ingredients from '../lib/ingredientsCategorized'
+import { ingredients } from '../lib/spoonacularUtils/ingredientsCategorized'
 
 export default function GetIngredient() {
     const [ingredient, setIngredient] = useState("");
-
+    const [id, setId] = useState("");
 
     const handleSearch = async function() {
         try {
@@ -17,7 +17,9 @@ export default function GetIngredient() {
                 console.log(error.response)
             }
     };
-
+    
+    const getTwoIngredients = () => {
+    }
     const handleCreate = (data) => {
         setIngredient(data);
     }
@@ -27,6 +29,7 @@ export default function GetIngredient() {
             <button onClick={handleSearch}>
                 Knapp
             </button>
+            
             <ul>
             <li>{ingredient.name}</li>
             </ul>
