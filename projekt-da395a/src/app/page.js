@@ -1,5 +1,9 @@
 import Image from "next/image";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
+import Card from "../components/Card";
+import Reload from "../components/ReloadBtn";
+import RecipeByIngredientFetcher from "../components/RecipeByIngredientFetcher";
+import GetIngredient from "../components/GetIngredient";
 export default function Home() {
   return (
     <div>

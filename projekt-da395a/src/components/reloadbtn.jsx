@@ -1,4 +1,4 @@
-export default function reload() {
+export default function Reload() {
   return (
     <div className="w-20 bg-pink-500 rounded-full">
       <img
