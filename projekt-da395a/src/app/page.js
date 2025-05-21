@@ -1,9 +1,13 @@
 import Image from "next/image";
-import Navbar from "../components/Navbar";
-import Card from "../components/Card";
-import Reload from "../components/ReloadBtn";
-import RecipeByIngredientFetcher from "../components/RecipeByIngredientFetcher";
+
+//Component function
 import GetIngredient from "../components/GetIngredient";
+
+//Components
+import { IngredientCard } from "@/components/IngredientCard";
+import Navbar from "../components/Navbar";
+import Reload from "../components/ReloadBtn";
+
 export default function Home() {
   return (
     <div>
@@ -12,13 +16,12 @@ export default function Home() {
       <main>
         <h1 className="text-center mt-10 text-2xl">Gör ditt val!</h1>
         <div className="flex flex-wrap flex-row justify-center items-center mt-10">
-          <Card />
-        <Reload />
-          <Card />
+          <IngredientCard />
+          <Reload />
+          <IngredientCard />
         </div>
       </main>
     </div>
-      <RecipeByIngredientFetcher />
       <GetIngredient />
     </div>
   );
