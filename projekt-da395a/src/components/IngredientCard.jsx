@@ -12,6 +12,8 @@ export function IngredientCard() {
   async function handleIngredients () {
     const result = await getIngredients();
     console.log(result);
+    setIngredients(result);
+    console.log("ingredients: " + ingredients);
 
   }
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 //Components
 import { IngredientCard } from "@/components/IngredientCard";
 import Navbar from "../components/Navbar";
-import Reload from "../components/ReloadBtn";
+import Reload from "../components/Reloadbtn";
 
 export default function Home() {
   return (

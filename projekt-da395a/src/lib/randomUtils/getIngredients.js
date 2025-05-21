@@ -17,16 +17,32 @@ export async function getIngredients() {
     try {
         const responses = await Promise.all(ids.map((id) =>
         fetch(`/api/recipe?type=ingrID&id=${id}`).then((res) => res.json())));
-
+        console.log(responses);
         return responses;
-
+        
         } catch (error) {
             console.log(error.response)
             return [];
             }
     };
     
+    /*
+    const filtered = filterByCategory("protein");
+        const selected = randomizer({ array: filtered, count: 2 });
+        const ids = selected.map((item) => item.id);
+        try {
+                const responses = await Promise.all(ids.map((id) =>
+                    fetch(`/api/recipe?type=ingrID&id=${id}`).then((res) => res.json())
+                )
+            );
+            console.log(responses);
+            setIngredient(responses);
+            } catch (error) {
+                console.log(error.response)
+            }
+    };
     
+    */
 
 {/*
 }[}]
