@@ -7,7 +7,8 @@ import Image from "next/image";
 //import { IngredientCard } from "@/components/IngredientCard";
 import Navbar from "../components/Navbar";
 //import Reload from "../components/Reloadbtn";
-import Landingpage from "../components/Homepage/Homepage";
+import Landingpage from "../components/Homepage";
+import {FooterComponent} from "../components/Footer";
 
 export default function Home() {
   return (
@@ -15,10 +16,10 @@ export default function Home() {
       <div>
         <Navbar />
         <main>
-          <div className="flex flex-wrap flex-row justify-center items-center mt-10">
+          
             <Landingpage />
 
-          </div>
+            <FooterComponent />
         </main>
       </div>
 
