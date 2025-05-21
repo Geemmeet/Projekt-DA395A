@@ -1,7 +1,6 @@
-import Image from "next/image";
+"use client";
 
-//Component function
-import GetIngredient from "../components/GetIngredient";
+import Image from "next/image";
 
 //Components
 import { IngredientCard } from "@/components/IngredientCard";
@@ -22,7 +21,6 @@ export default function Home() {
         </div>
       </main>
     </div>
-      <GetIngredient />
     </div>
   );
 }

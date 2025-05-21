@@ -1,19 +1,30 @@
+import {useState} from 'react';
 
 import { Card } from "flowbite-react";
+import { getIngredients } from "@/lib/randomUtils/getIngredients.js";
+
+//funktion ska hämta upp text och bild
+
 
 export function IngredientCard() {
+  const [ingredients, setIngredients] = useState([]);
+
+  async function handleIngredients () {
+    const result = await getIngredients();
+    console.log(result);
+
+  }
+
   return (
     <Card
+      onClick={handleIngredients}
       className="max-w-sm"
       imgAlt="Meaningful alt text for an image that is not purely decorative"
-      imgSrc="/images/blog/image-1.jpg"
+      imgSrc=""
     >
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Noteworthy technology acquisitions 2021
+        ""
       </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-      </p>
     </Card>
   );
 }
