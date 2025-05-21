@@ -1,31 +1,23 @@
-import {useState} from 'react';
+
 
 import { Card } from "flowbite-react";
-import { getIngredients } from "@/lib/randomUtils/getIngredients.js";
 
 //funktion ska hämta upp text och bild
 
 
-export function IngredientCard() {
-  const [ingredients, setIngredients] = useState([]);
-
-  async function handleIngredients () {
-    const result = await getIngredients();
-    console.log(result);
-    setIngredients(result);
-    console.log("ingredients: " + ingredients);
-
-  }
+export function IngredientCard({ ingredients = {name: "apple", image : "apple.png"}, onClick}) {
 
   return (
+    
     <Card
-      onClick={handleIngredients}
+      onClick={onClick}
       className="max-w-sm"
       imgAlt="Meaningful alt text for an image that is not purely decorative"
-      imgSrc=""
+      imgSrc={"https://img.spoonacular.com/ingredients_100x100/" + ingredients.image}
     >
+
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        ""
+        {ingredients.name}
       </h5>
     </Card>
   );
