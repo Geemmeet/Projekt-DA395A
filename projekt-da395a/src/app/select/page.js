@@ -14,10 +14,10 @@ export default function SelectPage() {
       <div> 
         <Navbar />
         <main>
-          <div className="flex flex-row lg:flex-row  px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-row-reverse">
-          <IngredientCard />
+          <div className="flex flex-row w-3/6 lg:flex-row  px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-row-reverse">
+          <IngredientCard text="testar proppen" />
           <Reload/>
-          <IngredientCard />
+          <IngredientCard text="testar den andra proppen"/>
           </div>
         </main>
         <FooterComponent />
