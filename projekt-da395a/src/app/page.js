@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import Navbar from "../components/Navbar";
 
-import Landingpage from "../components/Homepage";
+import Homepage from "../components/Homepage";
 import { FooterComponent } from "../components/Footer";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <div>
         <Navbar />
         <main>
-          <Landingpage />
+          <Homepage />
         </main>
         <FooterComponent />
       </div>
