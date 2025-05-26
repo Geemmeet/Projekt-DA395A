@@ -6,7 +6,8 @@ import Image from "next/image";
 import { IngredientCard } from "@/components/IngredientCard";
 import Navbar from "../components/Navbar";
 import Reload from "../components/ReloadBtn";
-import { getIngredients } from "../lib/randomUtils/getIngredients"
+import { getIngredients } from "../lib/randomUtils/getIngredients";
+import RecipeList from "../components/RecipeList";
 
 export default function Home() {
 
@@ -42,11 +43,7 @@ export default function Home() {
           <Reload />
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
-        <ul>
-          {chosenIngredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ul>
+        <RecipeList chosenIngredients={chosenIngredients} />
       </main>
     </div>
     </div>
