@@ -5,12 +5,11 @@
 import { IngredientCard } from "@/components/IngredientCard";
 import Navbar from "@/components/Navbar";
 import Reload from "@/components/Reloadbtn";
-
 import { FooterComponent } from "@/components/Footer";
-import { categorizeIngredients } from "@/lib/spoonacularUtils/categorizeIngredients";
 
 
-export default function SelectPage() { //Vad vill vi döpa  komponent till -> matcha mapp namnet!!
+
+export default function Select() { 
   
   
   return (
