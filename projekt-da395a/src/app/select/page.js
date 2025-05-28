@@ -16,19 +16,28 @@ export default function Select() {
 
     const [ingredients, setIngredients] = useState([]);
     const [chosenIngredients, setChosenIngredients] = useState([]);
-
+    const [recipes, setRecipes] = useState([]);
 
 
     const handleIngredients = async () => {
       const result = await getIngredients();
-      console.log(result);
       setIngredients(result);
     };
 
     const handleChosenIngredients = (choIngr) => {
       setChosenIngredients([...chosenIngredients, choIngr]);
       handleIngredients();
+      handleSearchRecipe();
     }
+
+    const handleSearchRecipe = async () => {
+      const newRecipes = await searchRecipe(chosenIngredients);
+
+      newRecipes && setRecipes([...newRecipes["results"]]);
+      newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
+    }
+
+
   //Kör handleIngredients en gång när sidan laddas
   useEffect(() => {
     handleIngredients();

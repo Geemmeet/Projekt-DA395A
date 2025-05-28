@@ -10,7 +10,7 @@ export async function getIngredients() {
     Vi använder Promise.all och map() på id:na för att skicka flera api:anrop samtidigt
     till slut uppdaterar vi vår ingredient till det vi får tillbaka.
     */
-    const filtered = filterByCategory("fruit");
+    const filtered = filterByCategory("carb");
     const selected = randomizer({ array: filtered, count: 2 });
     const ids = selected.map((item) => item.id);
 
