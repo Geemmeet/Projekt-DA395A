@@ -1,7 +1,6 @@
 'use client';
 
 const RecipeList = ({ chosenIngredients }) => {
-    
     return (
         <ul>
             {chosenIngredients.map((ingredient, index) => (
