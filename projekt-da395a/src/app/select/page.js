@@ -4,12 +4,12 @@ import { IngredientCard } from '@/components/IngredientCard';
 
 //Components
 
-import Navbar from "../components/Navbar";
-import ReloadBtn from "../components/ReloadBtn";
-import { getIngredients } from "../lib/randomUtils/getIngredients"
+import Navbar from "@/components/Navbar";
+import ReloadBtn from "@/components/ReloadBtn";
+import { getIngredients } from "@/lib/randomUtils/getIngredients"
 import RecipeList from '@/components/RecipeList';
 
-export default function Home() {
+export default function Select() {
 
     const [ingredients, setIngredients] = useState([]);
     const [chosenIngredients, setChosenIngredients] = useState([]);
@@ -38,7 +38,7 @@ export default function Home() {
       <Navbar />
       <main>
         <h1 className="text-center mt-10 text-2xl">Gör ditt val!</h1>
-        <div className="flex flex-wrap flex-row justify-center items-center mt-10">
+        <div className="flex flex-row w-3/6 lg:flex-row  px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-row-reverse">
           <IngredientCard onClick={handleChosenIngredients} ingredients={ingredients[0]}/>
           <ReloadBtn />
           <IngredientCard onClick={handleChosenIngredients} ingredients={ingredients[1]} />
