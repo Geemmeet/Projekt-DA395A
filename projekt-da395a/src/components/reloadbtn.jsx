@@ -1,8 +1,8 @@
 export default function Reloadbtn() {
   return (
-    <div className="w-20 bg-pink-500 rounded-full">
+    <div className="w-auto h-1/2 bg-pink-500 rounded-full m-auto">
       <img
-        className="w-95 p-3 h-full object-cover"
+        className="w-30 p-3 h-full object-cover"
         src="/reload.png"
         alt="reload"
       />

@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import Image from "next/image";
 
 //Components
-import { IngredientCard } from "@/components/IngredientCard";
+
 import Navbar from "../components/Navbar";
 import Reloadbtn from "../components/Reloadbtn";
 import { getIngredients } from "../lib/randomUtils/getIngredients"
@@ -32,7 +32,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <>
       <div>
       <Navbar />
       <main>
