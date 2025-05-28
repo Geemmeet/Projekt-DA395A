@@ -13,7 +13,7 @@ export default function Homepage() {
           <div className="flex flex-col lg:flex-col  px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-col ">
           
             <div className="order-first flex-shrink-0  md:basis-2/4 lg:basis-5/12 flex justify-center lg:justify-center">
-              <img src="/fast-food-placeholder.svg" alt="mockup" className="max-w-xs md:max-w-sm lg:max-w-md w-1/4 h-auto" />
+              <img src="/fast-food-placeholder.svg" alt="mockup" className="max-w-xs md:max-w-sm lg:max-w-md w-1/8 h-auto" />
             </div>
 
 
