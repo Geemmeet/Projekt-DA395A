@@ -1,4 +1,4 @@
-export default function Reload() {
+export default function Reloadbtn() {
   return (
     <div className="w-20 bg-pink-500 rounded-full">
       <img
