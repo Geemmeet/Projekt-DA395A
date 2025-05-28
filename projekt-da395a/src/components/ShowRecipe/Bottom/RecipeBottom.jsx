@@ -4,8 +4,10 @@ import ReceipeInstructions from "./RecipeInstructions";
 export default function () {
     return (
         <>
-            <RecipeIngredients />
-            <ReceipeInstructions />
+            <div className="flex justify-between">
+                <RecipeIngredients />
+                <ReceipeInstructions />
+            </div>
         </>
         
 

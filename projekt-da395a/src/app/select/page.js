@@ -1,17 +1,12 @@
 'use client'
-//Component function
 
-//Components
+//Import components
 import { IngredientCard } from "@/components/IngredientCard";
 import Navbar from "@/components/Navbar";
 import ReloadBtn from "@/components/ReloadBtn";
 import { FooterComponent } from "@/components/Footer";
 
-
-
-export default function Select() { 
-  
-  
+export default function Select() {  
   return (
     <>
       <div> 
