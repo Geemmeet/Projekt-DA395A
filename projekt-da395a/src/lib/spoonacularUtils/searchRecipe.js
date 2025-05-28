@@ -7,7 +7,7 @@ export async function searchRecipe(ingredients) {
         console.log("ingredients: ", ingredients);
         const ingrStr = ingredients.join(",");
         console.log("ingrStr: ", ingrStr);
-        const response = await fetch(`/api/recipe?type=byIngredients&ingredients=${ingrStr}`);
+        const response = await fetch(`/api/?type=byIngredients&ingredients=${ingrStr}`);
         const data = await response.json();
         console.log("data: ", data);
         return data;

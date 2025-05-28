@@ -16,7 +16,7 @@ export async function getIngredients() {
 
     try {
         const responses = await Promise.all(ids.map((id) =>
-        fetch(`/api/recipe?type=ingrID&id=${id}`).then((res) => res.json())));
+        fetch(`/api/?type=ingrID&id=${id}`).then((res) => res.json())));
         console.log(responses);
         return responses;
         
