@@ -1,20 +1,17 @@
-"use client";
-import {useState, useEffect} from 'react';
-import { IngredientCard } from '@/components/IngredientCard';
+'use client'
 
-//Components
-
+//Import components
+import { IngredientCard } from "@/components/IngredientCard";
 import Navbar from "@/components/Navbar";
 import ReloadBtn from "@/components/ReloadBtn";
 import { getIngredients } from "@/lib/randomUtils/getIngredients"
 import RecipeList from '@/components/RecipeList';
+import { FooterComponent } from "@/components/Footer";
 
 export default function Select() {
 
     const [ingredients, setIngredients] = useState([]);
     const [chosenIngredients, setChosenIngredients] = useState([]);
-
-
 
     const handleIngredients = async () => {
       const result = await getIngredients();
