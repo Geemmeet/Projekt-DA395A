@@ -39,9 +39,9 @@ export default function Home() {
       <main>
         <h1 className="text-center mt-10 text-2xl">Gör ditt val!</h1>
         <div className="flex flex-wrap flex-row justify-center items-center mt-10">
-          <IngredientCard onClick={handleIngredients} ingredients={ingredients[0]}/>
+          <IngredientCard onClick={handleChosenIngredients} ingredients={ingredients[0]}/>
           <ReloadBtn />
-          <IngredientCard onClick={handleIngredients} ingredients={ingredients[1]} />
+          <IngredientCard onClick={handleChosenIngredients} ingredients={ingredients[1]} />
         </div>
         <RecipeList chosenIngredients={chosenIngredients} />
       </main>
