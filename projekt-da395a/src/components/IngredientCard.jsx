@@ -2,7 +2,7 @@ import { Card } from "flowbite-react";
 
 //funktion ska hämta upp text och bild
 
-export function IngredientCard({ ingredients = {name: "apricots", image : "dried-apricots.jpg"}, onClick}) {
+export default function IngredientCard({ ingredients = {name: "apricots", image : "dried-apricots.jpg"}, onClick}) {
 
   return (
     

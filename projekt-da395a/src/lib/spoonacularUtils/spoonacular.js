@@ -7,7 +7,20 @@ export async function getRecipesByIngredients(ingredients) {
     /*
     Hämtar recept baserade på den/de ingredienser vi skickar med.
     */
-    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?&ingredients=${ingredients}&number=3&apiKey=${apiKey}`);
+    //const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?&ingredients=${ingredients}&number=3&apiKey=${apiKey}`);
+    console.log("ingredients: ", ingredients);
+    const params = new URLSearchParams({
+        includeIngredients: ingredients,
+        number: 3,
+        instructionsRequired: true,
+        apiKey: apiKey,
+        type: 'main course',
+        addRecipeInformation: true,
+        addRecipeInstructions: true,
+    });
+    const url = `https://api.spoonacular.com/recipes/complexSearch?${params}`;
+    const response = await fetch(url);
+    
     return await response.json();
 }
 
