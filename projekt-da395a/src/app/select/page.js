@@ -39,9 +39,9 @@ export default function Select() {
       <main>
         <h1 className="text-center mt-10 text-2xl">Gör ditt val!</h1>
         <div className="flex flex-row w-3/6 lg:flex-row  px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-row-reverse">
-          <IngredientCard onClick={handleChosenIngredients} ingredients={ingredients[0]}/>
-          <ReloadBtn />
-          <IngredientCard onClick={handleChosenIngredients} ingredients={ingredients[1]} />
+          <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0])} ingredients={ingredients[0]}/>
+          <ReloadBtn onClick = { () => handleIngredients() }/>
+          <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
         <RecipeList chosenIngredients={chosenIngredients} />
       </main>
