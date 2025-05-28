@@ -5,8 +5,8 @@ import { getRecipeInformation } from "@/lib/recipeFunctionality/getRecipeInforma
 export default function () {
     return (
         <div className="container mx-auto p-8">
-            <RecipeTop onClick={getRecipeInformation(715415)}/>
-            <RecipeBottom onClick={getRecipeInformation(715415)}/>
+            <RecipeTop />
+            <RecipeBottom />
         </div>
     )
 }

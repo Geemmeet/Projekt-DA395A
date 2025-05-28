@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 import IngredientCard from '@/components/IngredientCard';
 import Navbar from "@/components/Navbar";
 import ReloadBtn from "@/components/ReloadBtn";
-import RecipeList from '@/components/RecipeList';
+import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
 
 //functions 
 import { getIngredients } from "@/lib/randomUtils/getIngredients"
@@ -33,7 +33,6 @@ export default function Select() {
 
     const handleSearchRecipe = async () => {
       const newRecipes = await searchRecipe(chosenIngredients);
-
       newRecipes && setRecipes([...newRecipes["results"]]);
       newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
     }
@@ -54,9 +53,8 @@ export default function Select() {
           <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0].name)} ingredients={ingredients[0]}/>
           <ReloadBtn />
           <IngredientCard onClick={ () => handleChosenIngredients(ingredients[1].name)} ingredients={ingredients[1]} />
-            <button onClick={() => searchRecipe("potato")}>testa searchRecipe</button>
         </div>
-        <RecipeList chosenIngredients={chosenIngredients} />
+        <RecipeSummary recipes={recipes} />
       </main>
     </div>
     </>

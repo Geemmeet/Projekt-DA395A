@@ -1,5 +1,6 @@
 import RecipeIngredient from "./RecipeIngredient";
 import {List} from "flowbite-react";
+import { searchRecipe } from "@/lib/spoonacularUtils/searchRecipe";
 
 export default function RecipeIngredients ({ingredients = [{id: 1, type: "smör", amount: "20 g"}, {id: 2, type: "ost", amount: "4 st"}, {id: 3, type: "mjölk", amount: "2 dl"}]}){
 
