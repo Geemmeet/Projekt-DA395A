@@ -33,7 +33,7 @@ export default function Navbar() {
               <a href="/">
               <img
                 alt="Temproray Logo"
-                src="https://www.svgrepo.com/show/66980/fast-food-placeholder.svg"
+                src="/fast-food-placeholder.svg"
                 className="hidden lg:block h-8 w-auto"
               />
               </a>
