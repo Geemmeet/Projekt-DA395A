@@ -16,6 +16,7 @@ export async function getRecipesByIngredients(ingredients) {
         apiKey: apiKey,
         type: 'main course',
         addRecipeInformation: true,
+        addRecipeInstructions: true,
     });
     const url = `https://api.spoonacular.com/recipes/complexSearch?${params}`;
     const response = await fetch(url);
