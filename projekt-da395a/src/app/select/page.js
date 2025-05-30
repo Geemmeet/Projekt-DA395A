@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 //Components
 import IngredientCard from '@/components/IngredientCard';
 import Navbar from "@/components/Navbar";
-import ReloadBtn from "@/components/ReloadBtn";
+import ReloadBtn from "@/components/Reloadbtn";
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
 
 //functions 

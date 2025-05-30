@@ -16,8 +16,6 @@ export default function Recipe ({recipeId}) {
     const [image, setImage] = useState('');
     const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
-    const [summary, setSummary] = useState('');
-
 
     //Making sure that the function runs only when the url changes through useEffect
     //The change of the URL is dependent on the recipeId recieved by the Recipe function
@@ -51,9 +49,6 @@ export default function Recipe ({recipeId}) {
                 //Image
                 setImage(data.image)
                 
-                //Summary
-                setSummary(data.summary)
-                
                 //Ingredients
                 const ingredientList = []
 
@@ -84,18 +79,17 @@ export default function Recipe ({recipeId}) {
     }, [fetchUrl]);
 
     return (
-        <div className="h-110 ">
-            <div className="container mx-auto p-8">
+        <div>
                 <RecipeTop 
                 title = {title}
                 facts = {facts}
                 image = {image}
                 />
+
                 <RecipeBottom 
                 ingredients = {ingredients}
                 instructions = {instructions}
                 />
-            </div>
         </div>
     )
 }

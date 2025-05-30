@@ -2,7 +2,7 @@ export default function RecipeFacts ({image, title, facts}) {
     const ending = ["servings", "min"]
 
     return (
-        <div className="flex flex-row justify-center content-center flex-wrap-reverse">
+        <div className="bg-[#E7E4F7] flex flex-row justify-center content-center flex-wrap-reverse py-10">
             <img 
             src= {image || '/imageatm.png'}
             alt= {title || 'Bilden är inte tillgänglig'} 
@@ -15,7 +15,7 @@ export default function RecipeFacts ({image, title, facts}) {
                     {facts ? facts.slice(0, 4).map((fact, i) => (      
                         <div 
                         key = {i}
-                        className="bg-green-200 text-lg my-5 mx-1 rounded-[2vw] w-1/3 p-5 text-center"
+                        className="bg-[#9B92CD] text-lg my-5 mx-1 rounded-[2vw] w-1/3 p-5 text-center"
                         >{typeof fact === "string" 
                         ? (fact[0].toUpperCase() + fact.slice(1)) 
                         : fact} {ending[i] || ""}
