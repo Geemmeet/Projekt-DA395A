@@ -1,7 +1,10 @@
 import { filterByCategory } from '../spoonacularUtils/filterByCategory.js'
 import { randomizer } from './randomizer.js';
 
-export async function getIngredients() {
+const categories = ["carb", "protein", "vegetable"];
+
+
+export async function getIngredients(counter = 0) {
     /*
     Här sköter vi api-anropet för att hämta ingrediensinformation för 2 ingredienser. 
     filterByCategory returnerar en lista med ingredienser (från vår lista) baserat på vilken kategori vi skickar med.
@@ -10,7 +13,8 @@ export async function getIngredients() {
     Vi använder Promise.all och map() på id:na för att skicka flera api:anrop samtidigt
     till slut uppdaterar vi vår ingredient till det vi får tillbaka.
     */
-    const filtered = filterByCategory("carb");
+    const currentCategory = categories[counter];
+    const filtered = filterByCategory(currentCategory);
     const selected = randomizer({ array: filtered, count: 2 });
     const ids = selected.map((item) => item.id);
 
