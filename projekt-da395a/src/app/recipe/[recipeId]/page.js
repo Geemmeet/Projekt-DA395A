@@ -17,8 +17,7 @@ export default function Recipe() {
     <>
         <Navbar />
         <main>
-            <MainCombinedTopBottom />
-            <h1>{param.recipeId}</h1>
+            <MainCombinedTopBottom recipeId = {param.recipeId}/>
         </main>
         
     </>

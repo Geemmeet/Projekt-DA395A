@@ -21,3 +21,12 @@ export async function GET(req) {
 
     return new Response(JSON.stringify({ error: 'Unknown type' }), { status: 400 });
 }
+
+/*
+export async function GetRecipe(id) {
+    const url = new URL(req.url, 'http://localhost');
+
+    const data = await getRecipesById(id)
+    
+}
+*/
