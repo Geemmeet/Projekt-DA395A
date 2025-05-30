@@ -13,7 +13,7 @@ export default function IngredientCard({ ingredients = {name: "apricots", image 
       imgSrc={"https://img.spoonacular.com/ingredients_100x100/" + ingredients.image}
       >
 
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:cursor-pointer">
+      <h5 className="capitalize text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:cursor-pointer">
         {ingredients.name}
       </h5>
     </Card>

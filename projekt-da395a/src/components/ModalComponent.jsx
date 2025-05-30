@@ -18,13 +18,20 @@ const router = useRouter();
                         alt={recipe.title}
                         className="w-full h-40 object-cover rounded-md mb-2"
                     />
-            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-              Cookingtime: {recipe.readyInMinutes} <br></br>
-              Servings: {recipe.servings} <br></br>
-              Cheap: {recipe.cheap ? "Cheap" : "Not cheap"}
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 mr-5 inline">
+              Cookingtime: {recipe.readyInMinutes} 
             </p>
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 mr-5 inline">
+            Servings: {recipe.servings} 
+            </p>
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 mr-5 inline">
+            Cheap: {recipe.cheap ? "Cheap" : "Not cheap"}
+            </p>
+            <div dangerouslySetInnerHTML={{ __html: recipe.summary }} />
             
-          </div>
+            </div>
+            {/*https://www.geeksforgeeks.org/reactjs-dangerouslysetinnerhtml-attribute/*/}
+          
         </ModalBody>
         <ModalFooter>
            <Button 
