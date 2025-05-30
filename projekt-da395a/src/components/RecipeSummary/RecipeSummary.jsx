@@ -40,7 +40,7 @@ const RecipeSummary = ({ recipes }) => {
                     className="hover:cursor-pointer"
                     onClick={(e) => {
                         e.stopPropagation();  //Detta hindrar att modalen öppnas upp istället
-                    router.push(`/Recipe/${recipe.id}`);
+                    router.push(`/recipe/${recipe.id}`);
                     }}>Visa recept</Button>
                 </div>
 
