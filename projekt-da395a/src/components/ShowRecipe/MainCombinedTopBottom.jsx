@@ -11,12 +11,12 @@ export default function Recipe ({recipeId}) {
 
     //Defining useStates
     //https://react.dev/reference/react/useState
-    const [title, setTitle] = useState(null);
-    const [facts, setFacts] = useState(null);
-    const [image, setImage] = useState(null);
-    const [ingredients, setIngredients] = useState(null);
-    const [instructions, setInstructions] = useState(null);
-    const [summary, setSummary] = useState(null);
+    const [title, setTitle] = useState('');
+    const [facts, setFacts] = useState([]);
+    const [image, setImage] = useState('');
+    const [ingredients, setIngredients] = useState([]);
+    const [instructions, setInstructions] = useState([]);
+    const [summary, setSummary] = useState('');
 
 
     //Making sure that the function runs only when the url changes through useEffect
@@ -41,7 +41,11 @@ export default function Recipe ({recipeId}) {
                 setTitle(data.title)
 
                 //Facts
-                const factList = [data.servings, data.readyInMinutes, data.diets]
+                const factList = [data.servings, data.readyInMinutes]
+
+                const diets = data.diets;
+                diets.map (diet => factList.push(diet))
+
                 setFacts(factList)
                 
                 //Image
@@ -79,13 +83,6 @@ export default function Recipe ({recipeId}) {
         getRecipe();
     }, [fetchUrl]);
 
-    console.log("title:", title);
-    console.log("facts:", facts);
-    console.log("image:", image);
-    console.log("ingredients:", ingredients);
-    console.log("instructions:", instructions);
-    console.log("summary:", summary);
-
     return (
         <div className="h-110 ">
             <div className="container mx-auto p-8">
@@ -94,7 +91,10 @@ export default function Recipe ({recipeId}) {
                 facts = {facts}
                 image = {image}
                 />
-                <RecipeBottom />
+                <RecipeBottom 
+                ingredients = {ingredients}
+                instructions = {instructions}
+                />
             </div>
         </div>
     )
