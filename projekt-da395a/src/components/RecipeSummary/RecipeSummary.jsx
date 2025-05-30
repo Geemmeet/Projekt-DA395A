@@ -1,17 +1,16 @@
 
 import { useState } from 'react';
 import { ModalComponent } from '@/components/ModalComponent'
-import { Button } from 'flowbite-react';
-import { useRouter } from 'next/navigation'
+
 const RecipeSummary = ({ recipes }) => {
     // HUr modalen funkar -> steg 1: Håll koll på valt recept (null = inget valt, annars: ett receptobjekt)
-    const router = useRouter();
+    
     const [selectedRecipe, setSelectedRecipe] = useState(null);
 
 
 
     return (
-        <div className="flex flex-row flex-wrap gap-6 justify-center mt-8 mb-8" >
+        <div className="flex flex-row flex-wrap gap-6 justify-center mt-8 mb-8 hover:cursor-pointer" >
             {recipes && recipes.map((recipe) => (
                 <div key={recipe.id}
                     className="w-72 bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
@@ -35,13 +34,7 @@ const RecipeSummary = ({ recipes }) => {
                             {recipe.vegetarian ? "Vegetarian" : "Non-veg"}
                         </span>
                     </div>
-                    <Button 
-                    color="light"
-                    className="hover:cursor-pointer"
-                    onClick={(e) => {
-                        e.stopPropagation();  //Detta hindrar att modalen öppnas upp istället
-                    router.push(`/recipe/${recipe.id}`);
-                    }}>Visa recept</Button>
+                   
                 </div>
 
             ))}
