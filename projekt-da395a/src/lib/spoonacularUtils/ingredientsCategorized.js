@@ -702,7 +702,7 @@ export const ingredients = [
   {
     "id": 10043155,
     "name": "champagne",
-    "category": "protein"
+    "category": "beverage"
   },
   {
     "id": 99236,
