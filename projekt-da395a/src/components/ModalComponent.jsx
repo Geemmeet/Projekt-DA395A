@@ -30,7 +30,7 @@ const router = useRouter();
             <div dangerouslySetInnerHTML={{ __html: recipe.summary }} />
             
             </div>
-            {/*https://www.geeksforgeeks.org/reactjs-dangerouslysetinnerhtml-attribute/*/}
+            {/*Api:t returnerar en summary text i med html taggar, så fick lösa det såhär: https://www.geeksforgeeks.org/reactjs-dangerouslysetinnerhtml-attribute/*/}
           
         </ModalBody>
         <ModalFooter>
