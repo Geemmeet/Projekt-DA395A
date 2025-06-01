@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import ReloadBtn from "@/components/ReloadBtn";
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
 import { FooterComponent } from "@/components/Footer";
-import ShowSavedRecipies from '@/components/ShowSavedRecipies';
+import DrawerComponent from "@/components/showSavedRecipies/DrawerComponent"
 
 //Functions 
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
@@ -73,7 +73,7 @@ export default function Select() {
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
         <RecipeSummary recipes={recipes} />
-        <ShowSavedRecipies />
+        <DrawerComponent />
         <FooterComponent />
       </main>
     </div>

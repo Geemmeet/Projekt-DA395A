@@ -1,8 +1,9 @@
 'use client'
 import { getRecipie } from "@/lib/localstorageFunctionality/getRecipie"
 import { useState, useEffect } from "react";
-import { Card, Button } from "flowbite-react";
+import { Button } from "flowbite-react";
 import { useRouter } from 'next/navigation'
+
 
 //https://blog.logrocket.com/using-localstorage-react-hooks/
 
@@ -22,11 +23,11 @@ export default function ShowSavedRecipies() {
     return(
     <>
     <div>
-    <h3>Sparade recept</h3>
+   
     {showItems.map((item)=> 
      
           <div key={item.id}
-          className="inline-block m-5 p-2" >{item.title}
+          className="inline-flex m-5 p-2" >{item.title}
           <Button onClick={() => {
               router.push(`/recipe/${item.id}`);
             }}> Go to recipe </Button>

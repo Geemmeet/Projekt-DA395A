@@ -14,6 +14,7 @@ if (alreadySaved) return //stannar upp här om id redan finns i listan
 recipeList.push({id:recipieId, title:title});
 //spara i localstorage
 localStorage.setItem("savedRecipies", JSON.stringify(recipeList))
+alert("Recipe saved!")
 
 
 	
