@@ -7,11 +7,13 @@ import Navbar from "@/components/Navbar";
 import ReloadBtn from "@/components/ReloadBtn";
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
 import { FooterComponent } from "@/components/Footer";
+import ShowSavedRecipies from '@/components/ShowSavedRecipies';
 
-//functions 
+//Functions 
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
 import { searchRecipe } from '@/lib/recipeFunctionality/searchRecipe';
 import { getNextCategory } from '@/lib/ingredientFunctionality/getNextCategory';
+
 
 
 export default function Select() {
@@ -71,6 +73,8 @@ export default function Select() {
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
         <RecipeSummary recipes={recipes} />
+        <ShowSavedRecipies />
+        <FooterComponent />
       </main>
     </div>
     </>
