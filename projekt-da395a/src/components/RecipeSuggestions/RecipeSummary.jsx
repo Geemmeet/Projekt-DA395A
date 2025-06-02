@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { ModalComponent } from '@/components/Select/ModalComponent'
 
-const RecipeSummary = ({ recipes }) => {
+const RecipeSuggestions = ({ recipes }) => {
     // HUr modalen funkar -> steg 1: Håll koll på valt recept (null = inget valt, annars: ett receptobjekt)
     
     const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -47,4 +47,4 @@ const RecipeSummary = ({ recipes }) => {
     )
 }
 
-export default RecipeSummary;
+export default RecipeSuggestions;

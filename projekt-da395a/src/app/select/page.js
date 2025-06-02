@@ -5,8 +5,8 @@ import {useState, useEffect} from 'react';
 import IngredientCard from '@/components/Select/IngredientCard';
 import Navbar from '@/components/Homepage/Navbar';
 import RefreshBtn from '@/components/Select/RefreshBtn';
-import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
-import { FooterComponent } from '@/components/Homepage/Footer';
+import RecipeSuggestions from '@/components/RecipeSuggestions/RecipeSummary';
+import { FooterComponent } from '@/components/Homepage/FooterComponent';
 
 //Functions 
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
@@ -39,12 +39,12 @@ export default function Select() {
     newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
   }
 
-  //Kör handleIngredients en gång när sidan laddas
+  //Run handleIngredients once when the page is loaded
   useEffect(() => {
     handleIngredients();
   }, []);
   
-  //Kör handleIngredients varje gång chosenIngredients ändras
+  //Run handleIngredients each time chosenIngredients is updated
   useEffect(() => {
     if (chosenIngredients.length > 0) {
     handleIngredients();
@@ -59,7 +59,6 @@ export default function Select() {
 
   return (
     <>
-      <div>
       <Navbar />
       <main>
         <h1 className="text-center mt-12 text-5xl">Make your choice!</h1>
@@ -68,10 +67,9 @@ export default function Select() {
           <RefreshBtn onClick = { () => handleIngredients() }/>
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
-        <RecipeSummary recipes={recipes} />
-        <FooterComponent />
+        <RecipeSuggestions recipes={recipes} />
       </main>
-    </div>
+      <FooterComponent />
     </>
   );
 }

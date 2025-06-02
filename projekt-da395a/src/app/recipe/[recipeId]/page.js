@@ -3,6 +3,7 @@
 //Import Components
 import Navbar from "@/components/BavBar";
 import MainCombinedTopBottom from "@/components/ShowRecipe/MainCombinedTopBottom";
+import { FooterComponent } from "@/components/Homepage/FooterComponent";
 
 import { useParams } from 'next/navigation'
 
@@ -19,6 +20,7 @@ export default function Recipe() {
         <main>
             <MainCombinedTopBottom recipeId = {param.recipeId}/>
         </main>
+        <FooterComponent/>
         
     </>
   );
