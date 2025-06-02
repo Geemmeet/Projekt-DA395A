@@ -2,7 +2,7 @@ import { Card } from "flowbite-react";
 
 //funktion ska hämta upp text och bild
 // la en tillfällig placeholder bild och sparade det ursprunliga här: imgSrc={"https://img.spoonacular.com/ingredients_100x100/" + ingredients.image}
-export default function IngredientCard({ ingredients = {name: "apricots", image : "dried-apricots.jpg"}, onClick}) {
+export default function IngredientCard({ ingredients, onClick}) {
 
   return (
     

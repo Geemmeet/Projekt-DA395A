@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ModalComponent } from '@/components/ModalComponent'
+import { ModalComponent } from '@/components/Select/ModalComponent'
 
 const RecipeSummary = ({ recipes }) => {
     // HUr modalen funkar -> steg 1: Håll koll på valt recept (null = inget valt, annars: ett receptobjekt)

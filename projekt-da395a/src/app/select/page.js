@@ -6,7 +6,7 @@ import IngredientCard from '@/components/IngredientCard';
 import Navbar from "@/components/BavBar";
 import RefreshBtn from "@/components/RefreshBtn";
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
-import { FooterComponent } from "@/components/Footer";
+import { FooterComponent } from "@/components/Homepage/Footer";
 
 
 //Functions 
