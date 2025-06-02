@@ -1,3 +1,4 @@
+'use client'
 import { saveRecipie } from "@/lib/localstorageFunctionality/saveRecipie";
 
 export default function RecipeFacts({ image, title, facts, recipeId }) {
@@ -5,7 +6,7 @@ export default function RecipeFacts({ image, title, facts, recipeId }) {
 
     return (
         <div className="bg-[#E7E4F7] flex flex-row justify-center content-center flex-wrap-reverse py-10">
-            <div classname ="flex col-auto">
+            <div className="flex col-auto">
             <img
                 src={image || '/imageatm.png'}
                 alt={title || 'Bilden är inte tillgänglig'}

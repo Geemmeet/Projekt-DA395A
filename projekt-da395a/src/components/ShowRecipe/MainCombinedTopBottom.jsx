@@ -87,6 +87,7 @@ export default function Recipe({ recipeId }) {
                 title={title}
                 facts={facts}
                 image={image}
+                recipeId={recipeId}
             />
             <div className="flex justify-end me-5">
                 
