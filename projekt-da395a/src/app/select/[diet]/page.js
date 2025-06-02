@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import RefreshBtn from "@/components/RefreshBtn";
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
 import { FooterComponent } from "@/components/Footer";
-
+import { useParams } from 'next/navigation';
 
 //Functions 
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
@@ -17,11 +17,12 @@ import { getNextCategory } from '@/lib/ingredientFunctionality/getNextCategory';
 
 
 export default function Select() {
+    const params = useParams();
     const [ingredients, setIngredients] = useState({});
     const [ingredientCounter, setCounter] = useState(0);
     const [chosenIngredients, setChosenIngredients] = useState([]);
     const [recipes, setRecipes] = useState([]);
-
+    
 
     const handleIngredients = async () => {
       const cat = getNextCategory(chosenIngredients);
@@ -37,7 +38,7 @@ export default function Select() {
 
     const handleSearchRecipe = async () => {
       const ingrNames = chosenIngredients.map(ingr => ingr.name);
-      const newRecipes = await searchRecipe(ingrNames);
+      const newRecipes = await searchRecipe(ingrNames, params.diet);
       newRecipes && setRecipes([...newRecipes["results"]]);
       newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
     }

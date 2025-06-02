@@ -1,9 +1,12 @@
 'use client'
 import { Select, Button } from "flowbite-react";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import { useState,useEffect } from 'react';
+
 
 export default function Homepage() {
-   const router = useRouter()
+  const router = useRouter()
+  const [diet, setDiet] = useState("");
   return (
 
     <>
@@ -23,19 +26,26 @@ export default function Homepage() {
 
               <div className="flex flex-col md:flex-row justify-center">
                 
-                  <Select id="countries" className="w-full me-1 md:w-1/2 justify-center" defaultValue="none">
-                    <option value="none" disabled hidden>Choose your diet..</option>
+                  <Select 
+                  value={diet} 
+                  onChange={(e) => {
+                    setDiet(e.target.value)
+                    console.log(e.target.value);
+                    }} id="diets" className="w-full me-1 md:w-1/2 justify-center">
+                    <option value="" disabled hidden>Choose your diet..</option>
+                    <option value="none">No preference</option>
                     <option value="vegetarian">Vegetarian</option>
-                    <option value="pescetarian">Pescetarian</option>
                     <option value="vegan">Vegan</option>
-                    <option>...</option>
+                    <option value="gluten free">Gluten Free</option>
                   </Select>
               
-                
-                <Button className="bg-white text-gray-800 border border-gray-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer" onClick={() => router.push('/select')}>  {/* push() här är en router funktion och inte samma sak som push() vanligtvis, här betyder push att man lägger till en ny sida i webbläsarens historik och navigerar till den, ungefär som att klicka på en länk*/}
+                {useEffect(() => {
+                  <div><Button className="bg-white text-gray-800 border border-gray-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer" onClick={() => router.push('/select/' + diet)}>  {/* push() här är en router funktion och inte samma sak som push() vanligtvis, här betyder push att man lägger till en ny sida i webbläsarens historik och navigerar till den, ungefär som att klicka på en länk*/}
                   Get started
                   <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                </Button>
+                  </Button></div>
+                }, [diet])}
+                
               </div>
             </div>
            

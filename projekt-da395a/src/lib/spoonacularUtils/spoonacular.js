@@ -3,7 +3,7 @@ const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 Här samlar vi de olika anropen till Spoonacular som vi använder i route.js. 
 */
 
-export async function getRecipesByIngredients(ingredients) {
+export async function getRecipesByIngredients(ingredients, diet) {
     /*
     Hämtar recept baserade på den/de ingredienser vi skickar med.
     */
@@ -17,6 +17,7 @@ export async function getRecipesByIngredients(ingredients) {
         type: 'main course',
         addRecipeInformation: true,
         addRecipeInstructions: true,
+        diet: diet
     });
     const url = `https://api.spoonacular.com/recipes/complexSearch?${params}`;
     const response = await fetch(url);
