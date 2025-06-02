@@ -33,7 +33,7 @@ export default function Navbar() {
             <div className="flex shrink-0 items-center">
               <a href="/">
               <img
-                alt="Temproray Logo"
+                alt="Logo"
                 src="/fast-food-placeholder.svg"
                 className="hidden lg:block h-8 w-auto"
               />

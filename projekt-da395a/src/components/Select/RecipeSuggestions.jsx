@@ -6,7 +6,6 @@ const RecipeSuggestions = ({ recipes }) => {
     //Modal explanation
     // Step 1: Keep track of chosen recipe (null = no choice made, else: a recipe object)
     
-    //UseState
     const [selectedRecipe, setSelectedRecipe] = useState(null);
 
     return (
@@ -14,7 +13,7 @@ const RecipeSuggestions = ({ recipes }) => {
             {recipes && recipes.map((recipe) => (
                 <div 
                 key={recipe.id}
-                className="w-72 bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
+                className="w-95 lg:w-72 bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
 
                 //Step 2: Save the recipe in useState onClick to keep track of which recipe the modal is showing
                 onClick={() => setSelectedRecipe(recipe)}>
