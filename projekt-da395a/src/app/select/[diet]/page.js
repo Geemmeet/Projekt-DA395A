@@ -25,7 +25,7 @@ export default function Select() {
     
 
     const handleIngredients = async () => {
-      const cat = getNextCategory(chosenIngredients);
+      const cat = getNextCategory(chosenIngredients, params.diet);
       const result = await getIngredients(cat);
       setIngredients(result);
       setCounter(ingredientCounter + 1);
