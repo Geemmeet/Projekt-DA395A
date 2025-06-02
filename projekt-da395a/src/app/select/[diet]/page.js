@@ -8,6 +8,7 @@ import RefreshBtn from '@/components/Select/RefreshBtn';
 import RecipeSuggestions from '@/components/Select/RecipeSuggestions';
 import { FooterComponent } from '@/components/Homepage/FooterComponent';
 import { useParams } from 'next/navigation';
+import PreviouslyChosenIngredients from '@/components/Select/PreviouslyChosenIngredients';
 
 //Functions 
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
@@ -69,6 +70,7 @@ export default function Select() {
           <RefreshBtn onClick = { () => handleIngredients() }/>
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
+        <PreviouslyChosenIngredients ingredients = {chosenIngredients}/>
         <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
         <RecipeSuggestions recipes={recipes} />
       </main>
