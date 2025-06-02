@@ -61,12 +61,13 @@ export default function Select() {
     <>
       <Navbar />
       <main>
-        <h1 className="text-center mt-20 text-6xl">Make your choice!</h1>
-        <div className="flex flex-col justify-center mx-auto py-10 lg:flex-row">
+        <h1 className="text-center mt-20 mb-5 text-6xl">Make your choice!</h1>
+        <div className="flex flex-col container mx-auto justify-center py-10 lg:flex-row">
           <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0])} ingredients={ingredients[0]}/>
           <RefreshBtn onClick = { () => handleIngredients() }/>
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
         <RecipeSuggestions recipes={recipes} />
       </main>
       <FooterComponent />
