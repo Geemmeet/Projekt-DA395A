@@ -1,7 +1,7 @@
 'use client'
 
 //Import Components
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Homepage/Navbar";
 import MainCombinedTopBottom from "@/components/ShowRecipe/MainCombinedTopBottom";
 import { FooterComponent } from "@/components/Homepage/FooterComponent";
 
