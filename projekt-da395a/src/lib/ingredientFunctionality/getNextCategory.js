@@ -10,7 +10,7 @@ export function getNextCategory(ingredients, diet) {
     första kategorin som inte redan är vald. Om listan är tom returneras "carb"
     och om alla kategorier är valda returneras "vegetable".
     */
-    if (diet === "vegan" | "vegetarian") {
+    if (diet === "vegan" || "vegetarian") {
         categories.splice(1, 1);
     }
     console.log("Chosen catIngredients: ", ingredients);
