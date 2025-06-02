@@ -21,9 +21,8 @@ export default function DrawerComponent() {
         <DrawerItems>
             
           
-          <div className="flex flex-row">
+          <div className="flex flex-row m-5">
             <ShowSavedRecipies />
-            
           </div>
         </DrawerItems>
       </Drawer>

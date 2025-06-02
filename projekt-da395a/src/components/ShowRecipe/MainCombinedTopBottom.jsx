@@ -88,12 +88,14 @@ export default function Recipe({ recipeId }) {
                 facts={facts}
                 image={image}
             />
+            <div className="flex justify-end me-5">
             <Button
                 id={recipeId}
                 title={title}
                 onClick={() => saveRecipie(recipeId, title)}
             > Save recipie
             </Button>
+            </div>
 
             <RecipeBottom
                 ingredients={ingredients}
