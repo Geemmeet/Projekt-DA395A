@@ -14,7 +14,7 @@ const RecipeSummary = ({ recipes }) => {
             {recipes && recipes.map((recipe) => (
                 <div key={recipe.id}
                     className="w-72 bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
-                    onClick={() => setSelectedRecipe(recipe)} // Steg 2: När man klickar — spara receptet i useState
+                    onClick={() => setSelectedRecipe(recipe)} // Steg 2: När man klickar — spara receptet i useState för att hålla koll på vilket recept modalen ska visa
                 >
 
                     <img src={recipe.image}

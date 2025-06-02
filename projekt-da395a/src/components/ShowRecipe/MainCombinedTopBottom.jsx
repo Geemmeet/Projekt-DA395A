@@ -1,11 +1,14 @@
 import RecipeBottom from "./Bottom/RecipeBottom";
 import RecipeTop from "./Top/RecipeTop";
 import { useEffect, useState } from "react";
+import { saveRecipie } from "@/lib/localstorageFunctionality/saveRecipie";
+import { Button } from "flowbite-react";
 
-export default function Recipe ({recipeId}) {
+
+export default function Recipe({ recipeId }) {
     const url = `https://api.spoonacular.com/recipes/${recipeId}/information`
     const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-    
+
     //Fetch Spoonacular API
     const fetchUrl = `${url}?apiKey=${apiKey}`
 
@@ -42,21 +45,21 @@ export default function Recipe ({recipeId}) {
                 const factList = [data.servings, data.readyInMinutes]
 
                 const diets = data.diets;
-                diets.map (diet => factList.push(diet))
+                diets.map(diet => factList.push(diet))
 
                 setFacts(factList)
-                
+
                 //Image
                 setImage(data.image)
-                
+
                 //Ingredients
                 const ingredientList = []
 
-                data.extendedIngredients.map(ingredient => 
-                ingredientList.push({name: ingredient.name, amount: ingredient.measures.metric.amount, unit: ingredient.measures.metric.unitShort}))
+                data.extendedIngredients.map(ingredient =>
+                    ingredientList.push({ name: ingredient.name, amount: ingredient.measures.metric.amount, unit: ingredient.measures.metric.unitShort }))
 
                 setIngredients(ingredientList)
-                
+
                 //Instructions
                 const instructionList = []
 
@@ -65,10 +68,10 @@ export default function Recipe ({recipeId}) {
                 const instructions = data.analyzedInstructions[0].steps;
 
                 if (instructions !== null) {
-                    instructions.map(instruction => 
-                    instructionList.push({number: instruction.number, step: instruction.step}))
+                    instructions.map(instruction =>
+                        instructionList.push({ number: instruction.number, step: instruction.step }))
 
-                } 
+                }
                 setInstructions(instructionList)
 
             } catch (error) {
@@ -80,16 +83,24 @@ export default function Recipe ({recipeId}) {
 
     return (
         <div>
-                <RecipeTop 
-                title = {title}
-                facts = {facts}
-                image = {image}
-                />
+            <RecipeTop
+                title={title}
+                facts={facts}
+                image={image}
+            />
+            <div className="flex justify-end me-5">
+            <Button
+                id={recipeId}
+                title={title}
+                onClick={() => saveRecipie(recipeId, title)}
+            > Save recipie
+            </Button>
+            </div>
 
-                <RecipeBottom 
-                ingredients = {ingredients}
-                instructions = {instructions}
-                />
+            <RecipeBottom
+                ingredients={ingredients}
+                instructions={instructions}
+            />
         </div>
     )
 }
