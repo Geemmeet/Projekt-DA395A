@@ -7,8 +7,6 @@ const RecipeSummary = ({ recipes }) => {
     
     const [selectedRecipe, setSelectedRecipe] = useState(null);
 
-
-
     return (
         <div className="flex flex-row flex-wrap gap-6 justify-center mt-8 mb-8 hover:cursor-pointer" >
             {recipes && recipes.map((recipe) => (
@@ -16,7 +14,6 @@ const RecipeSummary = ({ recipes }) => {
                     className="w-72 bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
                     onClick={() => setSelectedRecipe(recipe)} // Steg 2: När man klickar — spara receptet i useState för att hålla koll på vilket recept modalen ska visa
                 >
-
                     <img src={recipe.image}
                         alt={recipe.title}
                         className="w-full h-40 object-cover rounded-md mb-2"
