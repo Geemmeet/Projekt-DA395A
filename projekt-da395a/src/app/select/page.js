@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 
 //Components
 import IngredientCard from '@/components/IngredientCard';
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/BavBar";
 import RefreshBtn from "@/components/RefreshBtn";
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
 import { FooterComponent } from "@/components/Footer";
