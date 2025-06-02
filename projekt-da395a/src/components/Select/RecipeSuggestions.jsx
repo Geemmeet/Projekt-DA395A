@@ -3,21 +3,27 @@ import { useState } from 'react';
 import { ModalComponent } from '@/components/Select/ModalComponent'
 
 const RecipeSuggestions = ({ recipes }) => {
-    // HUr modalen funkar -> steg 1: Håll koll på valt recept (null = inget valt, annars: ett receptobjekt)
+    //Modal explanation
+    // Step 1: Keep track of chosen recipe (null = no choice made, else: a recipe object)
     
+    //UseState
     const [selectedRecipe, setSelectedRecipe] = useState(null);
 
     return (
-        <div className="flex flex-row flex-wrap gap-6 justify-center mt-8 mb-8 hover:cursor-pointer" >
+        <div className="flex flex-row flex-wrap gap-8 justify-center my-8 hover:cursor-pointer" >
             {recipes && recipes.map((recipe) => (
-                <div key={recipe.id}
-                    className="w-72 bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
-                    onClick={() => setSelectedRecipe(recipe)} // Steg 2: När man klickar — spara receptet i useState för att hålla koll på vilket recept modalen ska visa
-                >
-                    <img src={recipe.image}
-                        alt={recipe.title}
-                        className="w-full h-40 object-cover rounded-md mb-2"
-                    />
+                <div 
+                key={recipe.id}
+                className="w-72 bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
+
+                //Step 2: Save the recipe in useState onClick to keep track of which recipe the modal is showing
+                onClick={() => setSelectedRecipe(recipe)}>
+
+                    <img 
+                    src={recipe.image}
+                    alt={recipe.title}
+                    className="w-full h-40 object-cover rounded-md mb-2"/>
+
                     <h2 className="text-md text-gray-700 font-semibold text-center mb-1">{recipe.title}</h2>
 
                     <div className="flex flex-row gap-2 mt-2 mb-6">
@@ -31,16 +37,15 @@ const RecipeSuggestions = ({ recipes }) => {
                             {recipe.vegetarian ? "Vegetarian" : "Non-veg"}
                         </span>
                     </div>
-                   
                 </div>
 
             ))}
-            {/* Steg 3: Visa modalen om ett recept är valt */}
+            {/* Step 3: Show the modal if a recipe is clicked*/}
             {selectedRecipe && (
                 <ModalComponent
-                    show={true}
-                    recipe={selectedRecipe}
-                    onClose={() => setSelectedRecipe(null)} // Steg 4: När man stänger modalen
+                show={true}
+                recipe={selectedRecipe}
+                onClose={() => setSelectedRecipe(null)} //Step 4: When the modal is closed
                 />
             )}
         </div>

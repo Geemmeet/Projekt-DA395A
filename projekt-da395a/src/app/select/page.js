@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 import IngredientCard from '@/components/Select/IngredientCard';
 import Navbar from '@/components/Homepage/Navbar';
 import RefreshBtn from '@/components/Select/RefreshBtn';
-import RecipeSuggestions from '@/components/RecipeSuggestions/RecipeSummary';
+import RecipeSuggestions from '@/components/Select/RecipeSuggestions';
 import { FooterComponent } from '@/components/Homepage/FooterComponent';
 
 //Functions 
@@ -61,8 +61,8 @@ export default function Select() {
     <>
       <Navbar />
       <main>
-        <h1 className="text-center mt-12 text-5xl">Make your choice!</h1>
-        <div className="flex flex-col justify-center lg:flex-row px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-row-reverse">
+        <h1 className="text-center mt-20 text-6xl">Make your choice!</h1>
+        <div className="flex flex-col justify-center mx-auto py-10 lg:flex-row">
           <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0])} ingredients={ingredients[0]}/>
           <RefreshBtn onClick = { () => handleIngredients() }/>
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
