@@ -2,7 +2,7 @@
 //import GetIngredient from "../components/GetIngredient";
 
 //Components
-import Navbar from "../components/Navbar";
+import Navbar from "../components/BavBar";
 import Homepage from "../components/Homepage";
 import { FooterComponent } from "../components/Footer";
 

@@ -3,8 +3,8 @@ import {useState, useEffect} from 'react';
 
 //Components
 import IngredientCard from '@/components/IngredientCard';
-import Navbar from "@/components/Navbar";
-import ReloadBtn from "@/components/ReloadBtn";
+import Navbar from "@/components/BavBar";
+import RefreshBtn from "@/components/RefreshBtn";
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
 import { FooterComponent } from "@/components/Footer";
 
@@ -69,7 +69,7 @@ export default function Select() {
         <h1 className="text-center mt-12 text-5xl">Make your choice!</h1>
         <div className="flex flex-col justify-center lg:flex-row px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-row-reverse">
           <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0])} ingredients={ingredients[0]}/>
-          <ReloadBtn onClick = { () => handleIngredients() }/>
+          <RefreshBtn onClick = { () => handleIngredients() }/>
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
         <RecipeSummary recipes={recipes} />

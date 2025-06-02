@@ -1,7 +1,7 @@
 'use client'
 
 //Import Components
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/BavBar";
 import MainCombinedTopBottom from "@/components/ShowRecipe/MainCombinedTopBottom";
 
 import { useParams } from 'next/navigation'
