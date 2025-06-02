@@ -9,7 +9,8 @@ export async function GET(req) {
 
     if (type === 'byIngredients') {
         const ingredients = url.searchParams.get('ingredients');
-        const data = await getRecipesByIngredients(ingredients);
+        const diet = url.searchParams.get('diet');
+        const data = await getRecipesByIngredients(ingredients, diet);
         return Response.json(data);
     }
     

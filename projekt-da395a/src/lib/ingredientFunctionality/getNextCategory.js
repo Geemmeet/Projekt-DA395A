@@ -4,12 +4,15 @@ const categories = [
     "vegetable",
 ];
 
-export function getNextCategory(ingredients) {
+export function getNextCategory(ingredients, diet) {
     /*
     Tar emot en lista med valda ingredienser. Går igenom listan och returnerar
     första kategorin som inte redan är vald. Om listan är tom returneras "carb"
     och om alla kategorier är valda returneras "vegetable".
     */
+    if (diet === "vegan" | "vegetarian") {
+        categories.splice(1, 1);
+    }
     console.log("Chosen catIngredients: ", ingredients);
     if (!ingredients || ingredients.length === 0) {
         return "carb";
