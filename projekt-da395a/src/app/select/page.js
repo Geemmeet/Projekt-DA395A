@@ -2,46 +2,42 @@
 import {useState, useEffect} from 'react';
 
 //Components
-import IngredientCard from '@/components/IngredientCard';
-import Navbar from "@/components/BavBar";
-import RefreshBtn from "@/components/RefreshBtn";
+import IngredientCard from '@/components/Select/IngredientCard';
+import Navbar from '@/components/Homepage/Navbar';
+import RefreshBtn from '@/components/Select/RefreshBtn';
 import RecipeSummary from '@/components/RecipeSummary/RecipeSummary';
-import { FooterComponent } from "@/components/Homepage/Footer";
-
+import { FooterComponent } from '@/components/Homepage/Footer';
 
 //Functions 
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
 import { searchRecipe } from '@/lib/recipeFunctionality/searchRecipe';
 import { getNextCategory } from '@/lib/ingredientFunctionality/getNextCategory';
 
-
-
 export default function Select() {
-    const [ingredients, setIngredients] = useState({});
-    const [ingredientCounter, setCounter] = useState(0);
-    const [chosenIngredients, setChosenIngredients] = useState([]);
-    const [recipes, setRecipes] = useState([]);
+  //Use states
+  const [ingredients, setIngredients] = useState({});
+  const [ingredientCounter, setCounter] = useState(0);
+  const [chosenIngredients, setChosenIngredients] = useState([]);
+  const [recipes, setRecipes] = useState([]);
 
+  const handleIngredients = async () => {
+    const cat = getNextCategory(chosenIngredients);
+    const result = await getIngredients(cat);
+    setIngredients(result);
+    setCounter(ingredientCounter + 1);
+  };
 
-    const handleIngredients = async () => {
-      const cat = getNextCategory(chosenIngredients);
-      const result = await getIngredients(cat);
-      setIngredients(result);
-      setCounter(ingredientCounter + 1);
-    };
+  const handleChosenIngredients = (choIngr) => {
+    chosenIngredients.length > 0 ? setChosenIngredients([...chosenIngredients, choIngr]) : setChosenIngredients([choIngr]);
+    console.log("Chosen ingredients: ", [...chosenIngredients, choIngr]);
+  }
 
-    const handleChosenIngredients = (choIngr) => {
-      chosenIngredients.length > 0 ? setChosenIngredients([...chosenIngredients, choIngr]) : setChosenIngredients([choIngr]);
-      console.log("Chosen ingredients: ", [...chosenIngredients, choIngr]);
-    }
-
-    const handleSearchRecipe = async () => {
-      const ingrNames = chosenIngredients.map(ingr => ingr.name);
-      const newRecipes = await searchRecipe(ingrNames);
-      newRecipes && setRecipes([...newRecipes["results"]]);
-      newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
-    }
-
+  const handleSearchRecipe = async () => {
+    const ingrNames = chosenIngredients.map(ingr => ingr.name);
+    const newRecipes = await searchRecipe(ingrNames);
+    newRecipes && setRecipes([...newRecipes["results"]]);
+    newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
+  }
 
   //Kör handleIngredients en gång när sidan laddas
   useEffect(() => {
@@ -73,7 +69,6 @@ export default function Select() {
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
         <RecipeSummary recipes={recipes} />
-       
         <FooterComponent />
       </main>
     </div>

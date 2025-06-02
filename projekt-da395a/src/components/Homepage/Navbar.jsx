@@ -2,7 +2,7 @@
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import DrawerComponent from "@/components/showSavedRecipies/DrawerComponent"
+import DrawerComponent from '../ShowSavedRecipes/DrawerComponent';
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },

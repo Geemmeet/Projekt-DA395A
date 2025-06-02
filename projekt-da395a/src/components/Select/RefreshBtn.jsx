@@ -1,4 +1,4 @@
-export default function ReloadBtn({onClick}) {
+export default function RefreshBtn({onClick}) {
   return (
     <div className="w-auto h-1/2 bg-[#DAD5F3] rounded-full m-auto shadow-lg transition delay-150 duration-300 ease-in-out hover:bg-[#BEB6E9]">
       <img
