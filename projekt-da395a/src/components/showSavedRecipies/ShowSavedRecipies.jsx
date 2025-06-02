@@ -24,18 +24,20 @@ export default function ShowSavedRecipies() {
     <>
       <div>
 
-        {showItems.map((item) =>
+        {showItems.map((item, index) =>
 
-          <div key={item.id}
-            className="inline-flex m-5 p-2 hover:cursor-pointer" 
+          <div key={item.id ?? index} //fallback om id saknas
+            className="inline-flex m-5 p-2 hover:cursor-pointer"
             onClick={() => {
-              router.push(`/recipe/${item.id}`);}}
-            >
-              {item.title}
+              router.push(`/recipe/${item.id}`);
+            }}
+          >
+            <p className="text-gray-800 hover:text-gray-500">{item.title}</p>
             <a>
-              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
+              <svg class="w-6 h-6 text-gray-800 dark:text-white hover:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
               </svg>
+
             </a>
           </div>
         )}

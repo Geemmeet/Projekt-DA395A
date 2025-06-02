@@ -1,7 +1,8 @@
 'use client';
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import DrawerComponent from "@/components/showSavedRecipies/DrawerComponent"
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -38,10 +39,10 @@ export default function Navbar() {
               />
               </a>
             </div>
-            
+          
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            
+            <DrawerComponent />
 
             {/* Profile dropdown */}
             <Menu as="div" className="hidden relative ml-3">

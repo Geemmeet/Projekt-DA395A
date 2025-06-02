@@ -1,7 +1,7 @@
 import RecipeBottom from "./Bottom/RecipeBottom";
 import RecipeTop from "./Top/RecipeTop";
 import { useEffect, useState } from "react";
-import { saveRecipie } from "@/lib/localstorageFunctionality/saveRecipie";
+
 import { Button } from "flowbite-react";
 
 
@@ -89,12 +89,7 @@ export default function Recipe({ recipeId }) {
                 image={image}
             />
             <div className="flex justify-end me-5">
-            <Button
-                id={recipeId}
-                title={title}
-                onClick={() => saveRecipie(recipeId, title)}
-            > Save recipie
-            </Button>
+                
             </div>
 
             <RecipeBottom
