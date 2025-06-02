@@ -6,7 +6,7 @@ import { useState,useEffect } from 'react';
 
 export default function Homepage() {
   const router = useRouter()
-  const [diet, setDiet] = useState("");
+  const [diet, setDiet] = useState("none");
   return (
 
     <>
