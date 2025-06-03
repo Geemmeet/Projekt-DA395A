@@ -1,4 +1,4 @@
-import { getRecipesByIngredients, getIngredient, getSimilarRecipes, getRecipeInfoBulk } from '@/lib/spoonacularUtils/spoonacular'
+import { fetchRecipesByIngredients, fetchIngredient, fetchSimilarRecipes, fetchRecipeBulkInfo } from '@/lib/spoonacularUtils/spoonacular'
 /*
 Här sköter vi API-anropen till Spoonacular. Vi importerar de specifika anropen från /lib/spoonacular.
 Baserat på vilken ?type vi skicker med från komponenten, körs respektive anrop. 
@@ -10,26 +10,27 @@ export async function GET(req) {
     if (type === 'byIngredients') {
         const ingredients = url.searchParams.get('ingredients');
         const diet = url.searchParams.get('diet');
-        const data = await getRecipesByIngredients(ingredients, diet);
+        const data = await fetchRecipesByIngredients(ingredients, diet);
         return Response.json(data);
     }
     
     if (type === 'ingrID') {
         const id = url.searchParams.get('id');
-        const data = await getIngredient(id);
+        const data = await fetchIngredient(id);
         return Response.json(data);
     }
 
     if (type === 'similarRecipes') {
         const id = url.searchParams.get('id');
         const diet = url.searchParams.get('diet');
-        const data = await getSimilarRecipes(id, diet);
+        const data = await fetchSimilarRecipes(id, diet);
         return Response.json(data);
     }
-    
-    if (type === 'recipeInfoBulk') {
+
+    if (type === 'recipeBulkInfo') {
         const ids = url.searchParams.get('ids');
-        const idsArray = ids.split(',').map((id) => idsArray)
+        const data = await fetchRecipeBulkInfo(ids);
+        return Response.json(data);
     }
     return new Response(JSON.stringify({ error: 'Unknown type' }), { status: 400 });
 }

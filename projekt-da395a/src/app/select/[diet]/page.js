@@ -13,6 +13,8 @@ import { useParams } from 'next/navigation';
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
 import { searchRecipe } from '@/lib/recipeFunctionality/searchRecipe';
 import { getNextCategory } from '@/lib/ingredientFunctionality/getNextCategory';
+import { getSimilarRecipes } from '@/lib/recipeFunctionality/getSimilarRecipes';
+import { getRecipeBulkInfo } from '@/lib/recipeFunctionality/getRecipeBulkInfo';
 
 
 
@@ -38,9 +40,20 @@ export default function Select() {
 
     const handleSearchRecipe = async () => {
       const ingrNames = chosenIngredients.map(ingr => ingr.name);
-      const newRecipes = await searchRecipe(ingrNames, params.diet);
-      newRecipes && setRecipes([...newRecipes["results"]]);
-      newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
+      let newRecipes = await searchRecipe(ingrNames, params.diet);
+      if (newRecipes["totalResults"] <= 2) {
+        const similarRecipes = await getSimilarRecipes(recipes[0].id, params.diet);
+        console.log("Similar recipes: ", similarRecipes);
+        const bulkInfo = await getRecipeBulkInfo(similarRecipes.map((recipe) => recipe.id));
+        setRecipes(bulkInfo);
+        console.log("Bulk info: ", bulkInfo);
+        return;
+      };
+      if (newRecipes && newRecipes["results"]) {
+        setRecipes([...newRecipes["results"]]);
+        console.log("Recipes: ", newRecipes["results"]);
+      }
+    
     }
 
 
