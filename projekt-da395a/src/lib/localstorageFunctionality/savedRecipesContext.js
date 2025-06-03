@@ -22,9 +22,12 @@ export function SavedRecipesProvider({ children }) {
     //https://www.w3schools.com/jsref/jsref_some.asp
     //Check if the recipe is already saved
     function saveRecipe(newRecipe) {
-        if (savedRecipes.some(recipe => recipe.id === newRecipe.id)) {
-        alert('Recipe already saved!');
-        return;
+        console.log(newRecipe)
+        if (savedRecipes.some(recipe => recipe.id === newRecipe.recipeId)) {
+            console.log("hej!")
+            console.log(recipe)
+            alert('Recipe already saved!');
+            return;
         }
 
         //Update the array of saved recipes
