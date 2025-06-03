@@ -3,7 +3,7 @@
 
 import { Button, Drawer, DrawerHeader, DrawerItems } from "flowbite-react";
 import { useState } from "react";
-import ShowSavedRecipies from "./ShowSavedRecipies";
+import ShowSavedRecipes from "./ShowSavedRecipes";
 
 
 export default function DrawerComponent() {
@@ -27,7 +27,7 @@ export default function DrawerComponent() {
 
 
           <div className="flex flex-row m-5">
-            <ShowSavedRecipies />
+            <ShowSavedRecipes />
           </div>
         </DrawerItems>
       </Drawer>
