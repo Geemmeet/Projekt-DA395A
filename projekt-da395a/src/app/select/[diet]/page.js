@@ -39,6 +39,10 @@ export default function Select() {
     }
 
     const handleSearchRecipe = async () => {
+      /*
+      This function will search for recipes based on the chosen ingredients. 
+      If there are less than 3 total results, it will fetch similar recipes based on the first recipe's ID.
+      */
       const ingrNames = chosenIngredients.map(ingr => ingr.name);
       let newRecipes = await searchRecipe(ingrNames, params.diet);
       if (newRecipes["totalResults"] <= 2) {
@@ -57,18 +61,19 @@ export default function Select() {
     }
 
 
-  //Kör handleIngredients en gång när sidan laddas
+  //Run handleIngredients once when the component mounts
   useEffect(() => {
     handleIngredients();
   }, []);
   
-  //Kör handleIngredients varje gång chosenIngredients ändras
+  //Run handleIngredients when state of chosenIngredients changes
   useEffect(() => {
     if (chosenIngredients.length > 0) {
     handleIngredients();
     }
   }, [chosenIngredients]);
 
+  //Run handleSearchRecipe when chosenIngredients changes if there are any chosen ingredients
   useEffect(() => {
     if (chosenIngredients.length > 0) {
       handleSearchRecipe();

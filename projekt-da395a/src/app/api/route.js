@@ -1,7 +1,17 @@
 import { fetchRecipesByIngredients, fetchIngredient, fetchSimilarRecipes, fetchRecipeBulkInfo } from '@/lib/spoonacularUtils/spoonacular'
 /*
-Här sköter vi API-anropen till Spoonacular. Vi importerar de specifika anropen från /lib/spoonacular.
-Baserat på vilken ?type vi skicker med från komponenten, körs respektive anrop. 
+This is the API route for handling various recipe-related requests.
+It supports fetching recipes by ingredients, ingredient details, similar recipes, and bulk recipe information.
+To use this API, you need to provide the appropriate query parameters in the request URL.
+
+Query parameters include:
+    - `type`: Specifies the type of request (e.g., 'byIngredients', 'ingrID', 'similarRecipes', 'recipeBulkInfo').
+
+Each type requires different parameters:
+    - `byIngredients`: Requires `ingredients` (a comma-separated list of ingredients) and `diet` (optional).
+    - `ingrID`: Requires `id` (the ID of the ingredient).
+    // - `similarRecipes`: Requires `id` (the ID of the recipe) and `diet` (optional).
+    - `recipeBulkInfo`: Requires `ids` (a comma-separated list of recipe IDs).
  */
 export async function GET(req) {
     const url = new URL(req.url, 'http://localhost');
