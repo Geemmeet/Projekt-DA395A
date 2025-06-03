@@ -1,20 +1,24 @@
-
 "use client";
 
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "flowbite-react";
-import { useRouter } from 'next/navigation'
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+} from "flowbite-react";
+import { useRouter } from "next/navigation";
 
 export function ModalComponent({ show, onClose, recipe }) {
-
   const router = useRouter();
   return (
     <>
-
       <Modal show={show} onClose={onClose}>
         <ModalHeader>{recipe.title}</ModalHeader>
         <ModalBody>
           <div className="space-y-6">
-            <img src={recipe.image}
+            <img
+              src={recipe.image}
               alt={recipe.title}
               className="w-full h-40 object-cover rounded-md mb-2"
             />
@@ -28,22 +32,28 @@ export function ModalComponent({ show, onClose, recipe }) {
               Cheap: {recipe.cheap ? "Cheap" : "Not cheap"}
             </p>
             <div dangerouslySetInnerHTML={{ __html: recipe.summary }} />
-
           </div>
-          {/*Api:t returnerar en summary text i med html taggar, så fick lösa det såhär: https://www.geeksforgeeks.org/reactjs-dangerouslysetinnerhtml-attribute/*/}
-
+          {/*The Api returns a summary text with HTML tags. Solution: https://www.geeksforgeeks.org/reactjs-dangerouslysetinnerhtml-attribute*/}
         </ModalBody>
         <ModalFooter>
           <Button
             color="green"
             className="hover:cursor-pointer"
             onClick={(e) => {
-              e.stopPropagation();  //Detta hindrar att modalen öppnas upp när man klickar på 'Visa recept'-knappen
+              //Stop propagation is used so the modal does not open when clicking on "Show recipe"
+              e.stopPropagation();
               router.push(`/recipe/${recipe.id}`);
-            }}>Visa recept</Button>
-          <Button color="light"
+            }}
+          >
+            Show Recipe
+          </Button>
+          <Button
+            color="light"
             className="hover:cursor-pointer"
-            onClick={onClose}>Stäng</Button>
+            onClick={onClose}
+          >
+            Close
+          </Button>
         </ModalFooter>
       </Modal>
     </>
