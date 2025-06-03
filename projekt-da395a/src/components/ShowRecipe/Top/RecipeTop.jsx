@@ -52,7 +52,7 @@ export default function RecipeFacts({ image, title, facts, recipeId }) {
             ? facts.slice(0, 4).map((fact, i) => (
                 <div
                   key={i}
-                  className="bg-[#9B92CD] text-lg my-5 mx-1 rounded-[2vw] w-1/3 p-5 text-center"
+                  className="bg-[#9B92CD] text-lg my-5 mx-1 rounded-[2vw] w-1/3 p-5 text-center flex items-center justify-center"
                 >
                   {typeof fact === "string"
                     ? fact[0].toUpperCase() + fact.slice(1)

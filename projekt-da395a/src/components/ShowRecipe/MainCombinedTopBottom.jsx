@@ -2,10 +2,6 @@ import RecipeBottom from "./Bottom/RecipeBottom";
 import RecipeTop from "./Top/RecipeTop";
 import { useEffect, useState } from "react";
 
-
-import { Button } from "flowbite-react";
-
-
 export default function Recipe({ recipeId }) {
     const url = `https://api.spoonacular.com/recipes/${recipeId}/information`
     const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -33,8 +29,6 @@ export default function Recipe({ recipeId }) {
                     console.error('API error response:', errorData);
                     throw new Error(`API returned status ${response.status}`);
                 }
-
-
 
                 const data = await response.json();
                 console.log(data)
