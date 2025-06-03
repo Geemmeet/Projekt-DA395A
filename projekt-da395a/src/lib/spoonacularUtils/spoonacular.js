@@ -24,8 +24,32 @@ export async function getRecipesByIngredients(ingredients, diet) {
     return await response.json();
 }
 
+
+export async function getSimilarRecipes(id, diet) {
+    const params = new URLSearchParams({
+        number: 3,
+        apiKey: apiKey,
+        diet: diet
+    });
+    const url = `https://api.spoonacular.com/recipes/${id}/similar?${params}`;
+    const response = await fetch(url);
+
+    return await response.json();
+}
+
+export async function getRecipeInfoBulk(ids) {
+    const params = new URLSearchParams({
+        ids: ids.join(','),
+        apiKey: apiKey
+    });
+
+    const url = `https://api.spoonacular.com/recipes/informationBulk?${params}`;
+    const response = await fetch(url);
+
+    return await response.json();
+}
+
 export async function getIngredient(id) {
     const response = await fetch(`https://api.spoonacular.com/food/ingredients/${id}/information?amount=1&apiKey=${apiKey}`);
     return await response.json();
 }
-

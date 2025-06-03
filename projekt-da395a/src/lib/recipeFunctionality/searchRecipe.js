@@ -1,5 +1,4 @@
 "use strict";
-import { getRecipesByIngredients } from '@/lib/spoonacularUtils/spoonacular'
 
 export async function searchRecipe(ingredients, diet) {
 

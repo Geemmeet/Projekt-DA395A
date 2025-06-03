@@ -1,4 +1,4 @@
-import { getRecipesByIngredients, getIngredient } from '@/lib/spoonacularUtils/spoonacular'
+import { getRecipesByIngredients, getIngredient, getSimilarRecipes, getRecipeInfoBulk } from '@/lib/spoonacularUtils/spoonacular'
 /*
 Här sköter vi API-anropen till Spoonacular. Vi importerar de specifika anropen från /lib/spoonacular.
 Baserat på vilken ?type vi skicker med från komponenten, körs respektive anrop. 
@@ -20,6 +20,17 @@ export async function GET(req) {
         return Response.json(data);
     }
 
+    if (type === 'similarRecipes') {
+        const id = url.searchParams.get('id');
+        const diet = url.searchParams.get('diet');
+        const data = await getSimilarRecipes(id, diet);
+        return Response.json(data);
+    }
+    
+    if (type === 'recipeInfoBulk') {
+        const ids = url.searchParams.get('ids');
+        const idsArray = ids.split(',').map((id) => idsArray)
+    }
     return new Response(JSON.stringify({ error: 'Unknown type' }), { status: 400 });
 }
 
