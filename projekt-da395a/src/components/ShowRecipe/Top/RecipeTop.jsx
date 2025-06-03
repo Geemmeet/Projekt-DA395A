@@ -1,8 +1,10 @@
 'use client'
-import { saveRecipie } from "@/lib/localstorageFunctionality/saveRecipie";
+import { storageFunctionality } from "@/lib/localstorageFunctionality/savedRecipesContext";
 
 export default function RecipeFacts({ image, title, facts, recipeId }) {
     const ending = ["servings", "min"]
+
+    const { saveRecipe } = storageFunctionality();
 
     return (
         <div className="bg-[#E7E4F7] flex flex-row justify-center content-center flex-wrap-reverse py-10">
@@ -16,8 +18,8 @@ export default function RecipeFacts({ image, title, facts, recipeId }) {
                 className="inline-flex hover:cursor-pointer hover:text-gray-500"
                 id={recipeId}
                 title={title}
-                onClick={() => saveRecipie(recipeId, title)}
-            > Save recipie
+                onClick={() => saveRecipe({recipeId, title})}
+            > Save recipe
                 <svg className="w-6 h-6 text-gray-800 dark:text-white hover:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
                 </svg>
