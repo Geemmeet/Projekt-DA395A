@@ -1,4 +1,4 @@
-import { fetchRecipesByIngredients, fetchIngredient, fetchSimilarRecipes, fetchRecipeBulkInfo } from '@/lib/spoonacularUtils/spoonacular'
+import { fetchRecipesByIngredients, fetchRecipeInfo, fetchSimilarRecipes, fetchRecipeBulkInfo } from '@/lib/spoonacularUtils/spoonacular'
 /*
 This is the API route for handling various recipe-related requests.
 It supports fetching recipes by ingredients, ingredient details, similar recipes, and bulk recipe information.
@@ -24,12 +24,6 @@ export async function GET(req) {
         return Response.json(data);
     }
     
-    if (type === 'ingrID') {
-        const id = url.searchParams.get('id');
-        const data = await fetchIngredient(id);
-        return Response.json(data);
-    }
-
     if (type === 'similarRecipes') {
         const id = url.searchParams.get('id');
         const diet = url.searchParams.get('diet');
@@ -42,5 +36,14 @@ export async function GET(req) {
         const data = await fetchRecipeBulkInfo(ids);
         return Response.json(data);
     }
+
+    if (type === 'recipeInfo') {
+        const id = url.searchParams.get('id');
+        const data = await fetchRecipeInfo(id);
+        return Response.json(data);
+    }
+
     return new Response(JSON.stringify({ error: 'Unknown type' }), { status: 400 });
+
+    
 }
