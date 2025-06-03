@@ -11,7 +11,6 @@ export default function Recipe() {
 
   //Store value of dynamic routing in recipeID variable through the use of useParams
   //https://nextjs.org/docs/app/api-reference/functions/use-params
-
   const param = useParams()
 
   return (

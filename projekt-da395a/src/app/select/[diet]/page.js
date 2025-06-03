@@ -18,7 +18,6 @@ import { getSimilarRecipes } from '@/lib/recipeFunctionality/getSimilarRecipes';
 import { getRecipeBulkInfo } from '@/lib/recipeFunctionality/getRecipeBulkInfo';
 
 
-
 export default function Select() {
   const params = useParams()
   //Use states
@@ -45,7 +44,9 @@ export default function Select() {
       If there are less than 3 total results, it will fetch similar recipes based on the first recipe's ID.
       */
       const ingrNames = chosenIngredients.map(ingr => ingr.name);
+
       let newRecipes = await searchRecipe(ingrNames, params.diet);
+
       if (newRecipes["totalResults"] <= 2) {
         const similarRecipes = await getSimilarRecipes(recipes[0].id, params.diet);
         console.log("Similar recipes: ", similarRecipes);
@@ -58,7 +59,6 @@ export default function Select() {
         setRecipes([...newRecipes["results"]]);
         console.log("Recipes: ", newRecipes["results"]);
       }
-    
     }
 
   //Run handleIngredients once when the page is loaded
@@ -69,16 +69,14 @@ export default function Select() {
   //Run handleIngredients each time chosenIngredients is updated
   useEffect(() => {
     if (chosenIngredients.length > 0) {
-    handleIngredients();
-    }
-  }, [chosenIngredients]);
+      handleIngredients();
+      }}, [chosenIngredients]);
 
   //Run handleSearchRecipe when chosenIngredients changes if there are any chosen ingredients
   useEffect(() => {
     if (chosenIngredients.length > 0) {
       handleSearchRecipe();
-    }
-  }, [chosenIngredients]);
+      }}, [chosenIngredients]);
 
   return (
     <>

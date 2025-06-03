@@ -25,69 +25,70 @@ export default function Recipe({ recipeId }) {
                     throw new Error(`API returned status ${response.status}`);
                 }
 
-                const data = await response.json();
-                console.log(data)
+        const data = await response.json();
+        console.log(data);
 
-                //Title
-                setTitle(data.title)
+        //Title
+        setTitle(data.title);
 
-                //Facts
-                const factList = [data.servings, data.readyInMinutes]
+        //Facts
+        const factList = [data.servings, data.readyInMinutes];
 
-                const diets = data.diets;
-                diets.map(diet => factList.push(diet))
+        const diets = data.diets;
+        diets.map((diet) => factList.push(diet));
 
-                setFacts(factList)
+        setFacts(factList);
 
-                //Image
-                setImage(data.image)
+        //Image
+        setImage(data.image);
 
-                //Ingredients
-                const ingredientList = []
+        //Ingredients
+        const ingredientList = [];
 
-                data.extendedIngredients.map(ingredient =>
-                    ingredientList.push({ name: ingredient.name, amount: ingredient.measures.metric.amount, unit: ingredient.measures.metric.unitShort }))
+        data.extendedIngredients.map((ingredient) =>
+          ingredientList.push({
+            name: ingredient.name,
+            amount: ingredient.measures.metric.amount,
+            unit: ingredient.measures.metric.unitShort,
+          })
+        );
 
-                setIngredients(ingredientList)
+        setIngredients(ingredientList);
 
-                //Instructions
-                const instructionList = []
+        //Instructions
+        const instructionList = [];
 
-                //Map through steps
+        //Map through steps
 
-                const instructions = data.analyzedInstructions[0].steps;
+        const instructions = data.analyzedInstructions[0].steps;
 
-                if (instructions !== null) {
-                    instructions.map(instruction =>
-                        instructionList.push({ number: instruction.number, step: instruction.step }))
-
-                }
-                setInstructions(instructionList)
-
-            } catch (error) {
-                console.error("Error fetching recipe:", error);
-            }
+        if (instructions !== null) {
+          instructions.map((instruction) =>
+            instructionList.push({
+              number: instruction.number,
+              step: instruction.step,
+            })
+          );
         }
-        getRecipe();
-    }, [fetchUrl]);
+        setInstructions(instructionList);
+      } catch (error) {
+        console.error("Error fetching recipe:", error);
+      }
+    }
+    getRecipe();
+  }, [fetchUrl]);
 
-    return (
-        <div>
-            <RecipeTop
-                title={title}
-                facts={facts}
-                image={image}
-                recipeId={recipeId}
-                
-            />
-            <div className="flex justify-end me-5">
-                
-            </div>
+  return (
+    <div>
+      <RecipeTop
+        title={title}
+        facts={facts}
+        image={image}
+        recipeId={recipeId}
+      />
+      <div className="flex justify-end me-5"></div>
 
-            <RecipeBottom
-                ingredients={ingredients}
-                instructions={instructions}
-            />
-        </div>
-    )
+      <RecipeBottom ingredients={ingredients} instructions={instructions} />
+    </div>
+  );
 }
