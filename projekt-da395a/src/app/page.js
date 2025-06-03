@@ -1,7 +1,22 @@
-import Image from "next/image";
-import Navbar from "../components/navbar";
+//Component function
+//import GetIngredient from "../components/GetIngredient";
+
+//Components
+import Navbar from "@/components/Homepage/Navbar";
+import Homepage from "@/components/Homepage/Homepage";
+import { FooterComponent } from "@/components/Homepage/FooterComponent";
+
 export default function Home() {
   return (
-    <Navbar />
+    <>
+      <div>
+        <Navbar />
+        <main>
+          <Homepage />
+        </main>
+        <FooterComponent />
+      </div>
+
+    </>
   );
 }
