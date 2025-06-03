@@ -2,6 +2,7 @@ import RecipeBottom from "./Bottom/RecipeBottom";
 import RecipeTop from "./Top/RecipeTop";
 import { useEffect, useState } from "react";
 
+
 import { Button } from "flowbite-react";
 
 
@@ -88,6 +89,7 @@ export default function Recipe({ recipeId }) {
                 facts={facts}
                 image={image}
                 recipeId={recipeId}
+                
             />
             <div className="flex justify-end me-5">
                 
