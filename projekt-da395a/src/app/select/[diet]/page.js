@@ -63,9 +63,9 @@ export default function Select() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="min-h-screen">
         <h1 className="text-center mt-20 mb-5 text-6xl">Make your choice!</h1>
-        <div className="flex flex-col container mx-auto justify-center py-10 lg:flex-row">
+        <div className="flex flex-col container mx-auto justify-center py-10 gap-1 lg:flex-row">
           <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0])} ingredients={ingredients[0]}/>
           <RefreshBtn onClick = { () => handleIngredients() }/>
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
