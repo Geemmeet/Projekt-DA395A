@@ -6,9 +6,11 @@ const categories = [
 
 export function getNextCategory(ingredients, diet) {
     /*
-    Tar emot en lista med valda ingredienser. Går igenom listan och returnerar
-    första kategorin som inte redan är vald. Om listan är tom returneras "carb"
-    och om alla kategorier är valda returneras "vegetable".
+    Accepts an array of ingredient objects and a diet type.
+    Returns the next category to be added based on the ingredients provided.
+    It will always return "carb" if no ingredients are provided.
+    If "vegan" or "vegetarian" diet is passed, it removes "meat" from the categories.
+    If all categories are already included, it returns "vegetable".
     */
     if (diet === "vegan" || diet === "vegetarian") {
         categories.splice(1, 1);
