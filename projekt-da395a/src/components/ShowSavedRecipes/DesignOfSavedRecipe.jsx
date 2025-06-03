@@ -13,7 +13,7 @@ export default function DesignOfSavedRecipe({ item, index }) {
       key={item.id ?? index} //fallback if id is missing
       className="flex flex-col m-5 p-2 hover:cursor-pointer"
       onClick={() => {
-        router.push(`/recipe/${item.id}`);
+        router.push(`/recipe/${item.recipeId}`);
       }}>
       <div className="flex justify-between items-center w-full">
         <p className="text-gray-800 hover:text-gray-500">{item.title}</p>
