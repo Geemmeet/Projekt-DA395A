@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+//Context for using UseState functionality for saving recipes
+import { SavedRecipesProvider } from "@/lib/localstorageFunctionality/savedRecipesContext";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +25,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SavedRecipesProvider>{children}</SavedRecipesProvider>
       </body>
     </html>
   );
