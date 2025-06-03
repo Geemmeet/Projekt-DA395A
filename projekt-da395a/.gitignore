@@ -21,7 +21,7 @@
 /build
 
 #flowbite
-/.flowbite-react
+class-list.json
 
 # misc
 .DS_Store
