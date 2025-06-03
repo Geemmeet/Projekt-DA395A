@@ -22,10 +22,9 @@ export function SavedRecipesProvider({ children }) {
     //https://www.w3schools.com/jsref/jsref_some.asp
     //Check if the recipe is already saved
     function saveRecipe(newRecipe) {
-        console.log(newRecipe)
-        if (savedRecipes.some(recipe => recipe.id === newRecipe.recipeId)) {
-            console.log("hej!")
-            console.log(recipe)
+        
+        if (savedRecipes.some(recipe => recipe.recipeId === newRecipe.recipeId)) {
+            
             alert('Recipe already saved!');
             return;
         }
@@ -45,7 +44,7 @@ export function SavedRecipesProvider({ children }) {
 
     function removeRecipe(recipeId) {
         //filter out the deleted recipe
-        const updated = savedRecipes.filter(recipe => recipe.id !== recipeId)
+        const updated = savedRecipes.filter(recipe => recipe.recipeId !== recipeId)
 
         //save the updated array to useState
         setSavedRecipes(updated);
