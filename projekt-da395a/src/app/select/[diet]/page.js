@@ -14,6 +14,10 @@ import PreviouslyChosenIngredients from '@/components/Select/PreviouslyChosenIng
 import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
 import { searchRecipe } from '@/lib/recipeFunctionality/searchRecipe';
 import { getNextCategory } from '@/lib/ingredientFunctionality/getNextCategory';
+import { getSimilarRecipes } from '@/lib/recipeFunctionality/getSimilarRecipes';
+import { getRecipeBulkInfo } from '@/lib/recipeFunctionality/getRecipeBulkInfo';
+
+
 
 export default function Select() {
   const params = useParams()
@@ -35,12 +39,27 @@ export default function Select() {
     console.log("Chosen ingredients: ", [...chosenIngredients, choIngr]);
   }
 
-  const handleSearchRecipe = async () => {
-    const ingrNames = chosenIngredients.map(ingr => ingr.name);
-    const newRecipes = await searchRecipe(ingrNames, params.diet);
-    newRecipes && setRecipes([...newRecipes["results"]]);
-    newRecipes && console.log("Recipes: ", [...newRecipes["results"]]);
-  }
+    const handleSearchRecipe = async () => {
+      /*
+      This function will search for recipes based on the chosen ingredients. 
+      If there are less than 3 total results, it will fetch similar recipes based on the first recipe's ID.
+      */
+      const ingrNames = chosenIngredients.map(ingr => ingr.name);
+      let newRecipes = await searchRecipe(ingrNames, params.diet);
+      if (newRecipes["totalResults"] <= 2) {
+        const similarRecipes = await getSimilarRecipes(recipes[0].id, params.diet);
+        console.log("Similar recipes: ", similarRecipes);
+        const bulkInfo = await getRecipeBulkInfo(similarRecipes.map((recipe) => recipe.id));
+        setRecipes(bulkInfo);
+        console.log("Bulk info: ", bulkInfo);
+        return;
+      };
+      if (newRecipes && newRecipes["results"]) {
+        setRecipes([...newRecipes["results"]]);
+        console.log("Recipes: ", newRecipes["results"]);
+      }
+    
+    }
 
   //Run handleIngredients once when the page is loaded
   useEffect(() => {
@@ -54,6 +73,7 @@ export default function Select() {
     }
   }, [chosenIngredients]);
 
+  //Run handleSearchRecipe when chosenIngredients changes if there are any chosen ingredients
   useEffect(() => {
     if (chosenIngredients.length > 0) {
       handleSearchRecipe();

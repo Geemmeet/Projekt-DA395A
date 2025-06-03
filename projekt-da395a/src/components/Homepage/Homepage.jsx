@@ -36,7 +36,6 @@ export default function Homepage() {
                     <option value="none">No preference</option>
                     <option value="vegetarian">Vegetarian</option>
                     <option value="vegan">Vegan</option>
-                    <option value="gluten free">Gluten Free</option>
                   </Select>
                   
                   <div><Button className="bg-white text-gray-800 border border-gray-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer" onClick={() => router.push('/select/' + diet)}>  {/* push() här är en router funktion och inte samma sak som push() vanligtvis, här betyder push att man lägger till en ny sida i webbläsarens historik och navigerar till den, ungefär som att klicka på en länk*/}
