@@ -20,6 +20,9 @@
 # production
 /build
 
+#flowbite
+/.flowbite-react
+
 # misc
 .DS_Store
 *.pem

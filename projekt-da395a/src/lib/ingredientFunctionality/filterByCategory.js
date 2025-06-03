@@ -1,4 +1,4 @@
-import { ingredients } from "../spoonacularUtils/nyIngredientsCategorized.js";
+import { ingredients } from "../spoonacularUtils/ingredientList.js";
 
 export function filterByCategory(cat) {
     /*

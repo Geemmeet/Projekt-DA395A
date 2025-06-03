@@ -14,7 +14,6 @@ export async function getRecipesByIngredients(ingredients, diet) {
         number: 3,
         instructionsRequired: true,
         apiKey: apiKey,
-        type: 'main course',
         addRecipeInformation: true,
         addRecipeInstructions: true,
         diet: diet
