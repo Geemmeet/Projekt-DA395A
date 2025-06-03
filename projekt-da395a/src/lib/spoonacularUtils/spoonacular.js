@@ -68,7 +68,18 @@ export async function fetchRecipeBulkInfo(ids) {
     return await response.json();
 }
 
-export async function fetchIngredient(id) {
-    const response = await fetch(`https://api.spoonacular.com/food/ingredients/${id}/information?amount=1&apiKey=${apiKey}`);
+export async function fetchRecipeInfo(id) {
+
+    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
+    
+    const response = await fetch(url);
+    if (!response.ok) {
+        const errorData = await response.json();
+        console.error('API error response:', errorData);
+        throw new Error(`API returned status ${response.status}`);
+    }
+
     return await response.json();
+    
+        
 }

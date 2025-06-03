@@ -3,12 +3,6 @@ import RecipeTop from "./Top/RecipeTop";
 import { useEffect, useState } from "react";
 
 export default function Recipe({ recipeId }) {
-    const url = `https://api.spoonacular.com/recipes/${recipeId}/information`
-    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
-    //Fetch Spoonacular API
-    const fetchUrl = `${url}?apiKey=${apiKey}`
-
     //Defining useStates
     //https://react.dev/reference/react/useState
     const [title, setTitle] = useState('');
@@ -17,6 +11,7 @@ export default function Recipe({ recipeId }) {
     const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
 
+    const fetchUrl = `/api/?type=recipeInfo&id=${recipeId}`
     //Making sure that the function runs only when the url changes through useEffect
     //The change of the URL is dependent on the recipeId recieved by the Recipe function
     //https://react.dev/reference/react/useEffect
