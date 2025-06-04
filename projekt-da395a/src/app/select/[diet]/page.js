@@ -22,7 +22,6 @@ export default function Select() {
   const params = useParams()
   //Use states
   const [ingredients, setIngredients] = useState({});
-  const [ingredientCounter, setCounter] = useState(0);
   const [chosenIngredients, setChosenIngredients] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [showingSimilarRecipes, setShowingSimilarRecipes] = useState(false);
@@ -33,7 +32,6 @@ export default function Select() {
     const cat = getNextCategory(chosenIngredients, params.diet);
     const result = await getIngredients(cat);
     setIngredients(result);
-    setCounter(ingredientCounter + 1);
   };
 
   const handleChosenIngredients = (choIngr) => {
@@ -104,7 +102,6 @@ export default function Select() {
               setChosenIngredients([]);
               setRecipes([]);
               setShowingSimilarRecipes(false);
-              setCounter(0);
             }}
             >
               Start Over!
