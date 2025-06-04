@@ -36,7 +36,7 @@ export function SavedRecipesProvider({ children }) {
         setSavedRecipes(updated);
 
         //Save the updated array to Local Storage
-        localStorage.setItem("savedRecipies", JSON.stringify(updated))
+        localStorage.setItem("savedRecipes", JSON.stringify(updated))
 
         //User Feedback
         alert('Recipe saved!');
@@ -50,7 +50,7 @@ export function SavedRecipesProvider({ children }) {
         setSavedRecipes(updated);
 
         //Save the updated array to Local Storage
-        localStorage.setItem("savedRecipies", JSON.stringify(updated))
+        localStorage.setItem("savedRecipes", JSON.stringify(updated))
     }
 
     return (

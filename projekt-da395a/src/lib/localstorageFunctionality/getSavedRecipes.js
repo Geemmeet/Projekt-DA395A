@@ -7,7 +7,7 @@ savedRecipes [{
 	}]
 
 */	
-	const savedRecipes = localStorage.getItem("savedRecipies");
+	const savedRecipes = localStorage.getItem("savedRecipes");
 	
 	//if there is recipes stored in local storage return SavedRecipes as a list of objects (from JSON)
 	//else return []
