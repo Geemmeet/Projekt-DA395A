@@ -1,4 +1,4 @@
-import { ingredients } from "../spoonacularUtils/ingredientList";
+import getCatByIngredient from "./getCatByIngredient";
 
 const categories = [
     "carbs",
@@ -6,19 +6,7 @@ const categories = [
     "vegetables",
 ];
 
-function getIngredientCategory(ingredientName) {
-  const lowerName = ingredientName.toLowerCase();
-  for (const category in ingredientLists) {
-    if (ingredientLists[category].some(item => item.toLowerCase() === lowerName)) {
-      return category;
-    }
-  }
-  return null;
-}
-
-
-
-export function getNextCategory(userIngredients, diet) {
+export function getNextCategory(Ingredients, diet) {
     /*
     Accepts an array of ingredient objects and a diet type.
     Returns the next category to be added based on the ingredients provided.
@@ -29,18 +17,12 @@ export function getNextCategory(userIngredients, diet) {
     if (diet === "vegan" || diet === "vegetarian") {
         categories.splice(1, 1);
     }
-    console.log("Chosen catIngredients: ", userIngredients);
-    if (!userIngredients || userIngredients.length === 0) {
+    console.log("Chosen catIngredients: ", Ingredients);
+    if (!Ingredients || Ingredients.length === 0) {
         return "carbs";
     }
 
-    for (const category in ingredients) {
-    if (ingredients[category].some(item => item.toLowerCase() === lowerName)) {
-      return category;
-    }
-  }
-
-    const chosenCategories = ingredients.map((ingredient) => getIngredientCategory(ingredient))
+    const chosenCategories = Ingredients.map((ingredient) => getCatByIngredient(ingredient))
 
     const next = categories.find(cat => !chosenCategories.includes(cat));
     return next || "vegetables"; // if all categories are chosen, return vegetables
