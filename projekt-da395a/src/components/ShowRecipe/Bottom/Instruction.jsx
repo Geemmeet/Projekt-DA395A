@@ -6,7 +6,7 @@ export default function Instruction({ number, instruction }) {
       <div className="flex items-center space-x-4 rtl:space-x-reverse">
         <div className="inline-flex text-base font-light text-gray-900 dark:text-white">
           <span className="font-extrabold me-2"> {number}.</span>
-          <span> {instruction}</span>
+          <span className="fraunces"> {instruction}</span>
         </div>
       </div>
     </ListItem>

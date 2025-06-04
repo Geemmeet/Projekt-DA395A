@@ -7,7 +7,7 @@ export default function IngredientList({ ingredients }) {
   return (
     <>
       <div className="flex-col w-100 lg:w-80 pt-20">
-        <h4 className="text-3xl mb-8">Ingredients</h4>
+        <h4 className="londrina_solid text-3xl mb-8">Ingredients</h4>
         <List
           unstyled
           className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">

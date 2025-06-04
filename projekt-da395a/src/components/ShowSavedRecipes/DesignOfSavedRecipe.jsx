@@ -21,7 +21,9 @@ export default function DesignOfSavedRecipe({ item, index }) {
 
         
         <button type="button" 
-        className="w-5 h-5 rounded-full flex items-center justify-center hover:ring-red-600 focus:outline-red-400 focus:ring-4 focus:ring-red-300"
+        className="w-5 h-5 rounded-full flex items-center justify-center 
+             hover:ring-2 hover:ring-red-600 
+             focus:outline-none focus:ring-4 focus:ring-red-300 hover:cursor-pointer"
           onClick={(e) => {
             e.stopPropagation();
             removeRecipe(item.recipeId);

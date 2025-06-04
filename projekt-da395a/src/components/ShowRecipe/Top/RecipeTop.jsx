@@ -16,7 +16,7 @@ export default function RecipeFacts({ image, title, facts, recipeId }) {
           className="lg:me-20 mt-10 mb-5 lg:mt-0 w-[350px] h-[350px] object-cover object-center"/>
 
         <button
-          className="inline-flex hover:cursor-pointer hover:text-gray-500"
+          className="londrina_solid inline-flex hover:cursor-pointer hover:text-gray-500"
           id={recipeId}
           title={title}
           onClick={() => saveRecipe({ recipeId, title })}>
@@ -39,7 +39,7 @@ export default function RecipeFacts({ image, title, facts, recipeId }) {
         </button>
       </div>
       <div>
-        <h3 className="text-4xl mb-10 text-center">
+        <h3 className="londrina_solid text-4xl mb-10 text-center">
           {title || "Titel är inte tillgänglig"}
         </h3>
         <div className="flex flex-wrap justify-evenly">

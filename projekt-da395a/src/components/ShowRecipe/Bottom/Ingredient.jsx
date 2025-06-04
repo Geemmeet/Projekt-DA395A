@@ -5,7 +5,7 @@ export default function Ingredient({ name, amount, unit }) {
     <ListItem className="pb-3 sm:pb-4" key={name}>
       <div className="flex items-center space-x-4 rtl:space-x-reverse">
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+          <p className="fraunces truncate text-sm font-medium text-gray-900 dark:text-white">
             {name.replace(/^./, (char) => char.toUpperCase())}
           </p>
         </div>
