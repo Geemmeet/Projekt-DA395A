@@ -20,11 +20,11 @@ export default function Homepage() {
               <img
                 src="/fast-food-placeholder.svg"
                 alt="mockup"
-                className="max-w-xs mt-0 mb-0 md:max-w-sm lg:max-w-md w-1/8 h-auto"
+                className="sm:max-w-xs mt-0 mb-0 md:max-w-md lg:max-w-md w-1/8 h-auto"
               />
             </div>
             <div className="self-center md:text-center lg:text-center lg:basis-8/12">
-              <h1 className= "max-w-xl mb-4 text-8xl">RECIPE <br></br> inspiration place</h1>
+              <h1 className= "text-4xl sm:text-6xl lg:text-8xl mb-4 max-w-xl">RECIPE <br></br> inspiration place</h1>
               <p className="fraunces max-w-2xl mb-6 font-light text-gray-900 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Choose your diet and your set to go</p>
 
               <div className="flex flex-col md:flex-row justify-center">
