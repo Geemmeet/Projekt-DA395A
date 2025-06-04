@@ -30,13 +30,11 @@ export default function Select() {
   const handleIngredients = async () => {
     const cat = getNextCategory(chosenIngredients, params.diet);
     const result = await getIngredients(cat);
-    console.log(result)
     setIngredients(result);
   };
 
   const handleChosenIngredients = (choIngr) => {
     chosenIngredients.length > 0 ? setChosenIngredients([...chosenIngredients, choIngr]) : setChosenIngredients([choIngr]);
-    console.log("Chosen ingredients: ", [...chosenIngredients, choIngr]);
   }
 
     const handleSearchRecipe = async () => {
@@ -44,14 +42,12 @@ export default function Select() {
       This function will search for recipes based on the chosen ingredients. 
       If there are less than 3 total results, it will fetch similar recipes based on the first recipe's ID.
       */
-      console.log(chosenIngredients)
-      const ingrNames = chosenIngredients.map(ingr => ingr.name);
+    
+      let newRecipes = await searchRecipe(chosenIngredients, params.diet);
 
-      let newRecipes = await searchRecipe(ingrNames, params.diet);
-
-      if (newRecipes["totalResults"] <= 2) {
+      if (newRecipes["totalResults"] <= 0) {
+        console.log("WHOMP WHOMP")
         const similarRecipes = await getSimilarRecipes(recipes[0].id, params.diet);
-        console.log("Similar recipes: ", similarRecipes);
         const bulkInfo = await getRecipeBulkInfo(similarRecipes.map((recipe) => recipe.id));
         setRecipes(bulkInfo);
         setShowingSimilarRecipes(true);
@@ -62,7 +58,6 @@ export default function Select() {
 
       if (newRecipes && newRecipes["results"]) {
         setRecipes([...newRecipes["results"]]);
-        console.log("Recipes: ", newRecipes["results"]);
       }
     }
 
@@ -89,9 +84,9 @@ export default function Select() {
         <h1 className="text-center mt-20 mb-5 text-6xl">Make your choice!</h1>
         {!showingSimilarRecipes ? (
           <div className="flex flex-col container mx-auto justify-center py-10 gap-1 lg:flex-row">
-          <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0])} ingredients={ingredients[0]}/>
+          <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0]) } ingredient={ingredients[0]}/>
           <RefreshBtn onClick = { () => handleIngredients() }/>
-          <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
+          <IngredientCard onClick={ () => handleChosenIngredients(ingredients[1]) } ingredient={ingredients[1]} />
         </div>
         ) : (
           <div className="flex flex-col items-center gap-4 my-8">

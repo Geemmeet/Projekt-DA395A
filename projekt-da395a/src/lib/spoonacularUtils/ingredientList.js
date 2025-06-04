@@ -1,6 +1,6 @@
 export const ingredients =
     {
-        carbs: ["pasta", "rice", "potatoes", "quinoa", "bulgur", "couscous", "bread", "baguette", "angel hair pasta", "tortillas", "chips", "cornbread", "lasagna noodles", "pizza crust", "potato chips", "noodles", "dough", "sweet potato", "taco shells", "toast"
+        carbs: ["pasta", "rice", "potatoes", "quinoa", "bulgur", "couscous", "bread", "baguette", "angel hair pasta", "tortilla", "cornbread", "crust", "chips", "noodles", "dough", "sweet potato", "taco shells", "toast"
     ], 
         meats: ["chicken", "ham", "hamburger", "pork", "sausage", "bacon", "meat", "beef", "tuna", "anchovies", "baby-back ribs", "cat fish", "crabmeat", "lamb", "turkey", "crab", "crawl fish", "shrimp", "salmon fillet", "sea scallops", "steak", 
     ],

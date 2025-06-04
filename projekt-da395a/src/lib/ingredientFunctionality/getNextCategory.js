@@ -17,7 +17,7 @@ export function getNextCategory(Ingredients, diet) {
     if (diet === "vegan" || diet === "vegetarian") {
         categories.splice(1, 1);
     }
-    console.log("Chosen catIngredients: ", Ingredients);
+
     if (!Ingredients || Ingredients.length === 0) {
         return "carbs";
     }
@@ -25,6 +25,7 @@ export function getNextCategory(Ingredients, diet) {
     const chosenCategories = Ingredients.map((ingredient) => getCatByIngredient(ingredient))
 
     const next = categories.find(cat => !chosenCategories.includes(cat));
+    
     return next || "vegetables"; // if all categories are chosen, return vegetables
 };
 

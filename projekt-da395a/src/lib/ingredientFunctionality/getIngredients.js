@@ -8,5 +8,6 @@ export async function getIngredients(cat) {
     const ingredientsByCat = ingredients[cat]
 
     const selected = randomizer({ array: ingredientsByCat, count: 2 });
+    
     return selected;
 };
