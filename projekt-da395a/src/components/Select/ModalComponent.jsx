@@ -11,6 +11,19 @@ import { useRouter } from "next/navigation";
 
 export function ModalComponent({ show, onClose, recipe }) {
   const router = useRouter();
+
+  function pricePerServing (pricePerS) {
+    const price = parseFloat(pricePerS)
+    if (price <= 200 ) {
+      return ("$")
+    }
+    else if (price <= 400 ){
+      return ("$$")
+    }
+    else {
+      return ("$$$")
+    }
+  }
   return (
     <>
       <Modal show={show} onClose={onClose}>
@@ -29,7 +42,7 @@ export function ModalComponent({ show, onClose, recipe }) {
               Servings: {recipe.servings}
             </p>
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 mr-5 inline">
-              Cheap: {recipe.cheap ? "Cheap" : "Not cheap"}
+              Pricerange: {pricePerServing(recipe.pricePerServing)}
             </p>
             <div dangerouslySetInnerHTML={{ __html: recipe.summary }} />
           </div>
