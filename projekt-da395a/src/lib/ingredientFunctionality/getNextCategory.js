@@ -1,10 +1,24 @@
+import { ingredients } from "../spoonacularUtils/ingredientList";
+
 const categories = [
-    "carb",
-    "meat",
-    "vegetable",
+    "carbs",
+    "meats",
+    "vegetables",
 ];
 
-export function getNextCategory(ingredients, diet) {
+function getIngredientCategory(ingredientName) {
+  const lowerName = ingredientName.toLowerCase();
+  for (const category in ingredientLists) {
+    if (ingredientLists[category].some(item => item.toLowerCase() === lowerName)) {
+      return category;
+    }
+  }
+  return null;
+}
+
+
+
+export function getNextCategory(userIngredients, diet) {
     /*
     Accepts an array of ingredient objects and a diet type.
     Returns the next category to be added based on the ingredients provided.
@@ -15,12 +29,20 @@ export function getNextCategory(ingredients, diet) {
     if (diet === "vegan" || diet === "vegetarian") {
         categories.splice(1, 1);
     }
-    console.log("Chosen catIngredients: ", ingredients);
-    if (!ingredients || ingredients.length === 0) {
-        return "carb";
+    console.log("Chosen catIngredients: ", userIngredients);
+    if (!userIngredients || userIngredients.length === 0) {
+        return "carbs";
     }
-    const chosenCategories = ingredients.map((ingredient) => ingredient.category);
+
+    for (const category in ingredients) {
+    if (ingredients[category].some(item => item.toLowerCase() === lowerName)) {
+      return category;
+    }
+  }
+
+    const chosenCategories = ingredients.map((ingredient) => getIngredientCategory(ingredient))
+
     const next = categories.find(cat => !chosenCategories.includes(cat));
-    return next || "vegetable"; // om alla kategorier är valda, returnera "vegetable"
+    return next || "vegetables"; // if all categories are chosen, return vegetables
 };
 

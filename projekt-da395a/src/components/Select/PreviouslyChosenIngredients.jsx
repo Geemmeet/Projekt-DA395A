@@ -1,5 +1,3 @@
-
-
 export default function PreviouslyChosenIngredients ({ingredients}) {
     return (
         <div className="flex flex-row flex-wrap justify-center gap-2 mt-4">

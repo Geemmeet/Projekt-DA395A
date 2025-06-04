@@ -20,17 +20,17 @@ import { getRecipeBulkInfo } from '@/lib/recipeFunctionality/getRecipeBulkInfo';
 
 export default function Select() {
   const params = useParams()
+
   //Use states
-  const [ingredients, setIngredients] = useState({});
+  const [ingredients, setIngredients] = useState([]);
   const [chosenIngredients, setChosenIngredients] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [showingSimilarRecipes, setShowingSimilarRecipes] = useState(false);
 
-
-
   const handleIngredients = async () => {
     const cat = getNextCategory(chosenIngredients, params.diet);
     const result = await getIngredients(cat);
+    console.log(result)
     setIngredients(result);
   };
 
@@ -44,6 +44,7 @@ export default function Select() {
       This function will search for recipes based on the chosen ingredients. 
       If there are less than 3 total results, it will fetch similar recipes based on the first recipe's ID.
       */
+      console.log(chosenIngredients)
       const ingrNames = chosenIngredients.map(ingr => ingr.name);
 
       let newRecipes = await searchRecipe(ingrNames, params.diet);
@@ -56,7 +57,9 @@ export default function Select() {
         setShowingSimilarRecipes(true);
         return;
       };
+
       setShowingSimilarRecipes(false);
+
       if (newRecipes && newRecipes["results"]) {
         setRecipes([...newRecipes["results"]]);
         console.log("Recipes: ", newRecipes["results"]);
