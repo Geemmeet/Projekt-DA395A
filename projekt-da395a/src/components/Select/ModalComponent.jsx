@@ -37,8 +37,7 @@ export function ModalComponent({ show, onClose, recipe }) {
         </ModalBody>
         <ModalFooter>
           <Button
-            color="green"
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer bg-purple-500 hover:bg-purple-800"
             onClick={(e) => {
               //Stop propagation is used so the modal does not open when clicking on "Show recipe"
               e.stopPropagation();

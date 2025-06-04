@@ -13,7 +13,7 @@ export default function DrawerComponent() {
     <>
       <div className="flex min-h-[50vh] items-center justify-center">
         <a
-          className="inline-flex hover:cursor-pointer"
+          className="londrina_solid inline-flex hover:cursor-pointer"
           onClick={() => setIsOpen(true)}>
           Saved recipes
           <svg
@@ -29,7 +29,7 @@ export default function DrawerComponent() {
         </a>
       </div>
       <Drawer open={isOpen} onClose={handleClose} position="right">
-        <DrawerHeader title="Saved recipes" />
+        <DrawerHeader className="londrina_solid" title="Saved recipes" />
         <DrawerItems>
           <div className="flex flex-row m-5">
             <ShowSavedRecipes />
