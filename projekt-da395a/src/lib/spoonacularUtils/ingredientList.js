@@ -323,5 +323,87 @@ export const ingredients = [
         "name": "brie",
         "category": "dairy",
         "img": "img-src.jpg"
+    },
+    //CHEESE
+    {
+        "name": "cheese",
+        "category": "cheese",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "brie",
+        "category": "cheese",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "feta",
+        "category": "cheese",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "mozzarella",
+        "category": "cheese",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "cheddar",
+        "category": "cheese",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "ricotta",
+        "category": "cheese",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "gorgonzola",
+        "category": "cheese",
+        "img": "img-src.jpg"
+    },
+    //DESSERT
+    {
+        "name": "chocolate",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "toffee",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "raspberry",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "cookies",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "cake",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "vanilla",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "ice cream",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "candy",
+        "category": "dessert",
+        "img": "img-src.jpg"
+    },
+    {
+        "name": "jam",
+        "category": "dessert",
+        "img": "img-src.jpg"
     }
 ];
