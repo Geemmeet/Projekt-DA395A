@@ -44,7 +44,7 @@ export default function DesignOfSavedRecipe({ item, index }) {
               strokeWidth="2"
               d="M6 18 17.94 6M18 18 6.06 6"/>
           </svg>
-        <span class="sr-only">Delete recipe</span>
+        <span className="sr-only">Delete recipe</span>
         </button>
       </div>
     </div>
