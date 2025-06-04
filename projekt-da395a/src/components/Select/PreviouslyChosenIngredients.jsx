@@ -5,7 +5,7 @@ export default function PreviouslyChosenIngredients ({ingredients}) {
             <span
             key={index}
             className="capitalize inline-flex items-center bg-[#DAD5F3] rounded-full px-3 py-2 my-1 text-md font-medium text-black ring-1 ring-indigo-700/10 ring-inset">
-            {ingredient.name}
+            {ingredient}
             </span>
         ))}
         </div>

@@ -11,11 +11,10 @@ import { useParams } from 'next/navigation';
 import PreviouslyChosenIngredients from '@/components/Select/PreviouslyChosenIngredients';
 
 //Functions 
-import { getIngredients } from "@/lib/ingredientFunctionality/getIngredients"
 import { searchRecipe } from '@/lib/recipeFunctionality/searchRecipe';
-import { getNextCategory } from '@/lib/ingredientFunctionality/getNextCategory';
 import { getSimilarRecipes } from '@/lib/recipeFunctionality/getSimilarRecipes';
 import { getRecipeBulkInfo } from '@/lib/recipeFunctionality/getRecipeBulkInfo';
+import getNextIngredientsByRecipe from '@/lib/recipeFunctionality/getNextIngredientsByRecipe';
 
 
 export default function Select() {
@@ -28,13 +27,18 @@ export default function Select() {
   const [showingSimilarRecipes, setShowingSimilarRecipes] = useState(false);
 
   const handleIngredients = async () => {
-    const cat = getNextCategory(chosenIngredients, params.diet);
-    const result = await getIngredients(cat);
-    setIngredients(result);
+    const ingredientsByRecipe = await getNextIngredientsByRecipe(chosenIngredients, params.diet)
+    if (ingredientsByRecipe === null) {
+      setShowingSimilarRecipes(true);
+      //Check if any of the ingredients are already chosen
+    } else if (ingredientsByRecipe.some((ingr) => chosenIngredients.includes(ingr))){
+      //If yes, run handle ingredients again to get new ingredients
+      handleIngredients()
+    } else { setIngredients(ingredientsByRecipe); }
   };
 
   const handleChosenIngredients = (choIngr) => {
-    chosenIngredients.length > 0 ? setChosenIngredients([...chosenIngredients, choIngr]) : setChosenIngredients([choIngr]);
+    setChosenIngredients([...chosenIngredients, choIngr]) 
   }
 
     const handleSearchRecipe = async () => {
@@ -45,8 +49,7 @@ export default function Select() {
     
       let newRecipes = await searchRecipe(chosenIngredients, params.diet);
 
-      if (newRecipes["totalResults"] <= 0) {
-        console.log("WHOMP WHOMP")
+      if (newRecipes["totalResults"] <= 2) {
         const similarRecipes = await getSimilarRecipes(recipes[0].id, params.diet);
         const bulkInfo = await getRecipeBulkInfo(similarRecipes.map((recipe) => recipe.id));
         setRecipes(bulkInfo);
@@ -90,8 +93,8 @@ export default function Select() {
         </div>
         ) : (
           <div className="flex flex-col items-center gap-4 my-8">
-            <p className="text-lg text-light-600 font-semibold">
-              No more recipes were found with your chosen ingredients 😞
+            <p className="text-lg text-light-600 font-semibold text-center p-2">
+              No more recipes were found with your chosen ingredients 😞<br/>
               Here are some similar recipes instead!
             </p>
             <button 
