@@ -23,7 +23,7 @@ const RecipeSuggestions = ({ recipes }) => {
                     alt={recipe.title}
                     className="w-full h-40 object-cover rounded-md mb-2"/>
 
-                    <h2 className="text-md text-gray-700 font-semibold text-center mb-1">{recipe.title}</h2>
+                    <h2 className="londrina_solid text-md text-gray-700 font-semibold text-center mb-1">{recipe.title}</h2>
 
                     <div className="flex flex-row gap-2 mt-2 mb-6">
                         <span className="inline-flex items-center justify-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
