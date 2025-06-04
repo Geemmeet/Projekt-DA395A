@@ -1,5 +1,6 @@
 'use client'
 import { Select, Button } from "flowbite-react";
+
 import { useRouter } from 'next/navigation';
 import { useState,useEffect } from 'react';
 
@@ -21,7 +22,7 @@ export default function Homepage() {
 
 
             <div className="self-center md:text-center lg:text-center lg:basis-8/12">
-              <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Your receipe inspiration place</h1>
+              <h1 className= "fraunces max-w-2xl mb-4 text-3xl">Your receipe inspiration place</h1>
               <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Choose your diet and your set to go</p>
 
               <div className="flex flex-col md:flex-row justify-center">

@@ -26,3 +26,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.eczar {
+  font-family: var(--Eczar);
+}
+
+.fraunces {
+  font-family: var(--Eczar);
+}
