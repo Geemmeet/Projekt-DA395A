@@ -18,20 +18,20 @@ import { getSimilarRecipes } from '@/lib/recipeFunctionality/getSimilarRecipes';
 import { getRecipeBulkInfo } from '@/lib/recipeFunctionality/getRecipeBulkInfo';
 
 
-
 export default function Select() {
   const params = useParams()
   //Use states
   const [ingredients, setIngredients] = useState({});
-  const [ingredientCounter, setCounter] = useState(0);
   const [chosenIngredients, setChosenIngredients] = useState([]);
   const [recipes, setRecipes] = useState([]);
+  const [showingSimilarRecipes, setShowingSimilarRecipes] = useState(false);
+
+
 
   const handleIngredients = async () => {
     const cat = getNextCategory(chosenIngredients, params.diet);
     const result = await getIngredients(cat);
     setIngredients(result);
-    setCounter(ingredientCounter + 1);
   };
 
   const handleChosenIngredients = (choIngr) => {
@@ -45,20 +45,22 @@ export default function Select() {
       If there are less than 3 total results, it will fetch similar recipes based on the first recipe's ID.
       */
       const ingrNames = chosenIngredients.map(ingr => ingr.name);
+
       let newRecipes = await searchRecipe(ingrNames, params.diet);
+
       if (newRecipes["totalResults"] <= 2) {
         const similarRecipes = await getSimilarRecipes(recipes[0].id, params.diet);
         console.log("Similar recipes: ", similarRecipes);
         const bulkInfo = await getRecipeBulkInfo(similarRecipes.map((recipe) => recipe.id));
         setRecipes(bulkInfo);
-        console.log("Bulk info: ", bulkInfo);
+        setShowingSimilarRecipes(true);
         return;
       };
+      setShowingSimilarRecipes(false);
       if (newRecipes && newRecipes["results"]) {
         setRecipes([...newRecipes["results"]]);
         console.log("Recipes: ", newRecipes["results"]);
       }
-    
     }
 
   //Run handleIngredients once when the page is loaded
@@ -68,28 +70,45 @@ export default function Select() {
   
   //Run handleIngredients each time chosenIngredients is updated
   useEffect(() => {
-    if (chosenIngredients.length > 0) {
-    handleIngredients();
-    }
-  }, [chosenIngredients]);
+      handleIngredients();
+      }, [chosenIngredients]);
 
   //Run handleSearchRecipe when chosenIngredients changes if there are any chosen ingredients
   useEffect(() => {
     if (chosenIngredients.length > 0) {
       handleSearchRecipe();
-    }
-  }, [chosenIngredients]);
+      }}, [chosenIngredients]);
 
   return (
     <>
       <Navbar />
       <main className="min-h-screen">
         <h1 className="text-center mt-20 mb-5 text-6xl">Make your choice!</h1>
-        <div className="flex flex-col container mx-auto justify-center py-10 gap-1 lg:flex-row">
+        {!showingSimilarRecipes ? (
+          <div className="flex flex-col container mx-auto justify-center py-10 gap-1 lg:flex-row">
           <IngredientCard onClick={ () => handleChosenIngredients(ingredients[0])} ingredients={ingredients[0]}/>
           <RefreshBtn onClick = { () => handleIngredients() }/>
           <IngredientCard onClick={() => handleChosenIngredients(ingredients[1])} ingredients={ingredients[1]} />
         </div>
+        ) : (
+          <div className="flex flex-col items-center gap-4 my-8">
+            <p className="text-lg text-light-600 font-semibold">
+              No more recipes were found with your chosen ingredients 😞
+              Here are some similar recipes instead!
+            </p>
+            <button 
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            onClick={() => {
+              setChosenIngredients([]);
+              setRecipes([]);
+              setShowingSimilarRecipes(false);
+            }}
+            >
+              Start Over!
+            </button>
+          </div>
+          )}
+        
         <PreviouslyChosenIngredients ingredients = {chosenIngredients}/>
         <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
         <RecipeSuggestions recipes={recipes} />

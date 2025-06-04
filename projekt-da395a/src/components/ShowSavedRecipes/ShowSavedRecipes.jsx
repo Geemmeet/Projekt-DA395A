@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { storageFunctionality } from "@/lib/localstorageFunctionality/savedRecipesContext";
 import DesignOfSavedRecipe from "./DesignOfSavedRecipe";
@@ -8,16 +8,13 @@ export default function ShowSavedRecipes() {
   const { savedRecipes } = storageFunctionality();
 
   return (
-      <div>
-        {savedRecipes.length === 0 && <p>No saved recipes yet.</p>}
+    <div>
+      {savedRecipes.length === 0 && <p>No saved recipes yet.</p>}
 
-        {/*Map the recipes*/}
-        {savedRecipes.map((item, index) => (
-          <DesignOfSavedRecipe 
-          key={item.id ?? index} 
-          item={item} 
-          index={index}/>))}
-      </div>
-
-  )
+      {/*Map the recipes*/}
+      {savedRecipes.map((item, index) => (
+        <DesignOfSavedRecipe key={item.id ?? index} item={item} index={index} />
+      ))}
+    </div>
+  );
 }
