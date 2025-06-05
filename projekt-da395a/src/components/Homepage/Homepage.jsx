@@ -16,7 +16,7 @@ export default function Homepage() {
       <div className="homepage">
         <section className="bg-white dark:bg-gray-900">
           <div className="flex flex-col lg:flex-col  px-4 py-8 mx-auto gap-8 lg:gap-16 lg:py-16 md:flex-col ">
-            <div className="order-first mb-[-4rem] flex-shrink-0  md:basis-2/4 lg:basis-5/12 flex justify-center lg:justify-center">
+            <div className="order-first lg:mb-[-4rem] flex-shrink-0  md:basis-2/4 lg:basis-5/12 flex justify-center lg:justify-center">
               <img
                 src="/fast-food-placeholder.svg"
                 alt="mockup"
@@ -46,7 +46,7 @@ export default function Homepage() {
                 </Select>
                 <div>
                   <Button
-                    className="mt-3 lg:mt-0 lg:ms-3 bg-white text-gray-800 border border-gray-300 hover:bg-[#DAD5F3] hover:text-white hover:cursor-pointer"
+                    className="mt-3 md:mt-0 md:ms-3 bg-white text-gray-800 border border-gray-300 hover:bg-[#DAD5F3] hover:text-white hover:cursor-pointer"
                     onClick={() => router.push("/select/" + diet)}
                   >
                     {/* push() in this context is a router function NOT a funcition to add to an array. */}
