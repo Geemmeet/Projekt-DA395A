@@ -1,6 +1,6 @@
 import { Card } from "flowbite-react";
 
-export default function IngredientCard({ ingredients, onClick}) {
+export default function IngredientCard({ ingredient, onClick}) {
 
   return (
     

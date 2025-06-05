@@ -12,7 +12,7 @@ export async function fetchRecipesByIngredients(ingredients, diet) {
     Returns: 
     - A JSON object containing the search results from the Spoonacular API.
     */
-    console.log("ingredients: ", ingredients);
+
     const params = new URLSearchParams({
         includeIngredients: ingredients,
         number: 3,
