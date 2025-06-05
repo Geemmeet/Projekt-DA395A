@@ -60,27 +60,25 @@ export default function Select() {
       This function will search for recipes based on the chosen ingredients. 
       If there are less than 3 total results, it will fetch similar recipes based on the first recipe's ID.
       */
-
     let newRecipes = await searchRecipe(chosenIngredients, params.diet);
-
-    if (newRecipes["totalResults"] <= 2) {
+    console.log("newRecipes är:", newRecipes);
+    console.log("typeof:", typeof newRecipes);
+    console.log("isArray:", Array.isArray(newRecipes));
+    if (newRecipes) {
+      setRecipes([...newRecipes]);
+      setShowingSimilarRecipes(false);
+    } else {
       const similarRecipes = await getSimilarRecipes(
         recipes[0].id,
         params.diet
       );
-      const bulkInfo = await getRecipeBulkInfo(
+    const bulkInfo = await getRecipeBulkInfo(
         similarRecipes.map((recipe) => recipe.id)
       );
-      setRecipes(bulkInfo);
-      setShowingSimilarRecipes(true);
-      return;
-    }
-
-    setShowingSimilarRecipes(false);
-
-    if (newRecipes && newRecipes["results"]) {
-      setRecipes([...newRecipes["results"]]);
-    }
+    setRecipes(bulkInfo);
+    setShowingSimilarRecipes(true);
+    return;
+    };
   };
 
   //Run handleIngredients once when the page is loaded
