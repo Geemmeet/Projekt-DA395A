@@ -32,9 +32,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Dependencies:
 - [Next.js](https://nextjs.org/)
 - [React](https://react.dev/)
+- [React-Dom](https://www.npmjs.com/package/react-dom)
 - [Tailwind](https://tailwindcss.com)
 - [Flowbite](https://flowbite-react.com/)
-
+- [HeadlessUI](https://headlessui.com/)
+- [Heroicons](https://heroicons.com/)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
 
 
 ## Information about the project
