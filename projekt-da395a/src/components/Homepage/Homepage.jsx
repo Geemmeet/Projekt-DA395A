@@ -25,7 +25,7 @@ export default function Homepage() {
             </div>
             <div className="self-center md:text-center lg:text-center lg:basis-8/12">
               <h1 className= "text-4xl sm:text-6xl lg:text-8xl mb-4 max-w-xl">RECIPE <br></br> inspiration place</h1>
-              <p className="fraunces max-w-2xl mb-6 font-light text-gray-900 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Choose your diet and your set to go</p>
+              <p className="fraunces max-w-2xl mb-6 font-light text-gray-900 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Choose your diet and you're set to go</p>
 
               <div className="flex flex-col md:flex-row justify-center">
                 <Select
