@@ -125,7 +125,7 @@ export default function Select() {
               Here are some similar recipes instead!
             </p>
             <button
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-[#DAD5F3]"
               onClick={() => {
                 setChosenIngredients([]);
                 setRecipes([]);
