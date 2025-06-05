@@ -24,6 +24,6 @@ export async function searchRecipe(ingredients, diet) {
 
         } catch (error) {
             console.log(error.response)
-            return [];
+            return null;
             }
     };

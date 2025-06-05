@@ -64,20 +64,19 @@ export default function Select() {
     console.log("newRecipes är:", newRecipes);
     console.log("typeof:", typeof newRecipes);
     console.log("isArray:", Array.isArray(newRecipes));
-    if (newRecipes) {
-      setRecipes([...newRecipes]);
-      setShowingSimilarRecipes(false);
-    } else {
+    if (newRecipes.length < 3) {
       const similarRecipes = await getSimilarRecipes(
         recipes[0].id,
         params.diet
       );
-    const bulkInfo = await getRecipeBulkInfo(
+      const bulkInfo = await getRecipeBulkInfo(
         similarRecipes.map((recipe) => recipe.id)
       );
     setRecipes(bulkInfo);
     setShowingSimilarRecipes(true);
-    return;
+    } else {
+    setRecipes([...newRecipes]);
+    setShowingSimilarRecipes(false);
     };
   };
 
