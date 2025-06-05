@@ -2,17 +2,7 @@ import RecipeBottom from "./Bottom/RecipeBottom";
 import RecipeTop from "./Top/RecipeTop";
 import { useEffect, useState } from "react";
 
-
-import { Button } from "flowbite-react";
-
-
 export default function Recipe({ recipeId }) {
-    const url = `https://api.spoonacular.com/recipes/${recipeId}/information`
-    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
-    //Fetch Spoonacular API
-    const fetchUrl = `${url}?apiKey=${apiKey}`
-
     //Defining useStates
     //https://react.dev/reference/react/useState
     const [title, setTitle] = useState('');
@@ -21,6 +11,7 @@ export default function Recipe({ recipeId }) {
     const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
 
+    const fetchUrl = `/api/?type=recipeInfo&id=${recipeId}`
     //Making sure that the function runs only when the url changes through useEffect
     //The change of the URL is dependent on the recipeId recieved by the Recipe function
     //https://react.dev/reference/react/useEffect
@@ -34,71 +25,70 @@ export default function Recipe({ recipeId }) {
                     throw new Error(`API returned status ${response.status}`);
                 }
 
+        const data = await response.json();
+        console.log(data);
 
+        //Title
+        setTitle(data.title);
 
-                const data = await response.json();
-                console.log(data)
+        //Facts
+        const factList = [data.servings, data.readyInMinutes];
 
-                //Title
-                setTitle(data.title)
+        const diets = data.diets;
+        diets.map((diet) => factList.push(diet));
 
-                //Facts
-                const factList = [data.servings, data.readyInMinutes]
+        setFacts(factList);
 
-                const diets = data.diets;
-                diets.map(diet => factList.push(diet))
+        //Image
+        setImage(data.image);
 
-                setFacts(factList)
+        //Ingredients
+        const ingredientList = [];
 
-                //Image
-                setImage(data.image)
+        data.extendedIngredients.map((ingredient) =>
+          ingredientList.push({
+            name: ingredient.name,
+            amount: ingredient.measures.metric.amount,
+            unit: ingredient.measures.metric.unitShort,
+          })
+        );
 
-                //Ingredients
-                const ingredientList = []
+        setIngredients(ingredientList);
 
-                data.extendedIngredients.map(ingredient =>
-                    ingredientList.push({ name: ingredient.name, amount: ingredient.measures.metric.amount, unit: ingredient.measures.metric.unitShort }))
+        //Instructions
+        const instructionList = [];
 
-                setIngredients(ingredientList)
+        //Map through steps
 
-                //Instructions
-                const instructionList = []
+        const instructions = data.analyzedInstructions[0].steps;
 
-                //Map through steps
-
-                const instructions = data.analyzedInstructions[0].steps;
-
-                if (instructions !== null) {
-                    instructions.map(instruction =>
-                        instructionList.push({ number: instruction.number, step: instruction.step }))
-
-                }
-                setInstructions(instructionList)
-
-            } catch (error) {
-                console.error("Error fetching recipe:", error);
-            }
+        if (instructions !== null) {
+          instructions.map((instruction) =>
+            instructionList.push({
+              number: instruction.number,
+              step: instruction.step,
+            })
+          );
         }
-        getRecipe();
-    }, [fetchUrl]);
+        setInstructions(instructionList);
+      } catch (error) {
+        console.error("Error fetching recipe:", error);
+      }
+    }
+    getRecipe();
+  }, [fetchUrl]);
 
-    return (
-        <div>
-            <RecipeTop
-                title={title}
-                facts={facts}
-                image={image}
-                recipeId={recipeId}
-                
-            />
-            <div className="flex justify-end me-5">
-                
-            </div>
+  return (
+    <div>
+      <RecipeTop
+        title={title}
+        facts={facts}
+        image={image}
+        recipeId={recipeId}
+      />
+      <div className="flex justify-end me-5"></div>
 
-            <RecipeBottom
-                ingredients={ingredients}
-                instructions={instructions}
-            />
-        </div>
-    )
+      <RecipeBottom ingredients={ingredients} instructions={instructions} />
+    </div>
+  );
 }

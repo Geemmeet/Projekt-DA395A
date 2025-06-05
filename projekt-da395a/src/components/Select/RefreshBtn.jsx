@@ -6,7 +6,6 @@ export default function RefreshBtn({onClick}) {
         src="/refresh.png"
         alt="reload"
         onClick={onClick}
-        
       />
     </div>
   );

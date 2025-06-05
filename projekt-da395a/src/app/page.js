@@ -1,6 +1,3 @@
-//Component function
-//import GetIngredient from "../components/GetIngredient";
-
 //Components
 import Navbar from "@/components/Homepage/Navbar";
 import Homepage from "@/components/Homepage/Homepage";
@@ -16,7 +13,6 @@ export default function Home() {
         </main>
         <FooterComponent />
       </div>
-
     </>
   );
 }

@@ -20,8 +20,8 @@
 # production
 /build
 
-# flowbite
-.flowbite-react/class-list.json
+#flowbite
+class-list.json
 
 # misc
 .DS_Store
