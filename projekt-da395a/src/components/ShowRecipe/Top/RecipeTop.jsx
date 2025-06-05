@@ -1,11 +1,21 @@
 "use client";
 import { storageFunctionality } from "@/lib/localstorageFunctionality/savedRecipesContext";
 
+
 export default function RecipeFacts({ image, title, facts, recipeId }) {
   const ending = ["servings", "min"];
 
   //Gets the saveRecipe function from context to be able to use usestate globally
-  const { saveRecipe } = storageFunctionality();
+  const { saveRecipe, savedRecipes } = storageFunctionality();
+  let fillHeart = "none"
+  
+  if (savedRecipes.some(recipe => recipe.recipeId === recipeId )
+  ) {
+  fillHeart = "red"
+}
+
+  
+
 
   return (
     <div className="bg-[#E7E4F7] flex flex-row justify-center content-center flex-wrap-reverse py-10">
@@ -27,7 +37,7 @@ export default function RecipeFacts({ image, title, facts, recipeId }) {
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
-            fill="none"
+            fill={fillHeart}
             viewBox="0 0 24 24">
             <path
               stroke="currentColor"
