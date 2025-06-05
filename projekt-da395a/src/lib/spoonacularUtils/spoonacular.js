@@ -15,7 +15,7 @@ export async function fetchRecipesByIngredients(ingredients, diet) {
 
     const params = new URLSearchParams({
         includeIngredients: ingredients,
-        number: 3,
+        number: 10,
         instructionsRequired: true,
         apiKey: apiKey,
         addRecipeInformation: true,

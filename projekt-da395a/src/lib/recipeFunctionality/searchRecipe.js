@@ -1,4 +1,5 @@
 "use strict";
+import { randomizer } from "../randomUtils/randomizer.js"
 
 export async function searchRecipe(ingredients, diet) {
     /*
@@ -16,7 +17,10 @@ export async function searchRecipe(ingredients, diet) {
         //Call the API
         const response = await fetch(`/api/?type=byIngredients&ingredients=${ingrStr}&diet=${diet}`);
         const data = await response.json();
-        return data;
+        console.log(data.results);
+        const randomizedRecipes = randomizer({array: data.results, count: 3});
+        console.log(randomizedRecipes);
+        return randomizedRecipes;
 
         } catch (error) {
             console.log(error.response)

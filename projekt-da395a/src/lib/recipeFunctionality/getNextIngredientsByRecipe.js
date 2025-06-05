@@ -15,12 +15,12 @@ export default async function getNextIngredientsByRecipe (chosenIngredients, die
     } else {
         const foundRecipes = await searchRecipe(chosenIngredients, diet)
         console.log(foundRecipes)
-        console.log(foundRecipes.results.length)
+        console.log(foundRecipes.length)
 
-        if (foundRecipes.results.length >= 3) {
+        if (foundRecipes.length >= 3) {
             console.log("Now im here")
-            const firstRecipe = foundRecipes.results[0]
-            const secondRecipe = foundRecipes.results[1]
+            const firstRecipe = foundRecipes[0]
+            const secondRecipe = foundRecipes[1]
 
             const firstIngredient = await getRandomIngredientFromRecipe(firstRecipe)
             const secondIngredient = await getRandomIngredientFromRecipe(secondRecipe)
