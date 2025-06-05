@@ -40,7 +40,7 @@ export function ModalComponent({ show, onClose, recipe }) {
   }
   return (
     <>
-      <Modal show={show} onClose={onClose}>
+      <Modal dismissible show={show} onClose={onClose}>
         <ModalHeader className="londrina_solid">{recipe.title}</ModalHeader>
         <ModalBody>
           <div className="space-y-6">
