@@ -46,7 +46,7 @@ We chose to use the React framework together with Next.js, which is used to buil
 Sources: next.org/docs & https://radixweb.com/blog/nextjs-vs-react
 
 
-#Why we chose React over Angular and Vue:
+# Why we chose React over Angular and Vue:
 
 Compared to Angular, React is considered easier for beginners to learn, which is why we chose to work with React. But also because it is a popular language that is useful to know for future professional work. Angular is considered suitable for bigger projects, since our project is small we choose React for simplicity.
 React is a JavaScript library developed by Facebook, while Angular is a TypeScript framework developed by Google. TypeScript is based on JavaScript and has its advantages, but we chose to use React because we are relatively new to JavaScript and want to build on that knowledge before learning TypeScript. Angular’s advantages include better error handling and cleaner code, but its steep learning curve is mainly the reason we chose not to use it. Vue is also seen as beginner-friendly, but based on research, it may be easiest to learn once you have a basic understanding of React. The advantages of Vue are said to include “cleaner” code and good, easy-to-understand documentation.
